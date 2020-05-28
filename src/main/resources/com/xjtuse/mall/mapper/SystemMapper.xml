@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xjtuse.mall.mapper.admin.SystemMapper">
+    <resultMap id="BaseResultMap" type="com.xjtuse.mall.bean.system.Storage">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="key" property="key" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="size" property="size" jdbcType="INTEGER"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        `key`, `name`, `type`, `size`, url, add_time, update_time, deleted
+    </sql>
+
+    <insert id="storageCreate">
+        insert into litemall_storage
+        (<include refid="Base_Column_List"/>)
+        values
+        (#{storage.key},#{storage.name},#{storage.type},#{storage.size},#{storage.url},now(),null,#{storage.deleted})
+    </insert>
+    
+    <select id="queryStorages" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from litemall_storage
+        <where>
+            deleted = false
+            <if test="storage != null">
+                <if test="storage.key != null and storage.key != ''">
+                    and `key` like concat('%',#{storage.key},'%')
+                </if>
+                <if test="storage.name != null and storage.name != ''">
+                    and `name` like concat('%',#{storage.name},'%')
+                </if>
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order}
+        limit #{pageUtil.start}, #{pageUtil.limit}
+    </select>
+
+    <select id="queryStoragesCount" resultType="Integer">
+        select count(*) from litemall_storage
+        <where>
+            deleted = false
+            <if test="storage != null">
+                <if test="storage.key != null and storage.key != ''">
+                    and `key` like concat('%',#{storage.key},'%')
+                </if>
+                <if test="storage.name != null and storage.name != ''">
+                    and `name` like concat('%',#{storage.name},'%')
+                </if>
+            </if>
+        </where>
+    </select>
+
+    <update id="updateStorage">
+        update litemall_storage
+        <set>
+            `name` = #{storage.name},
+            update_time = now(),
+        </set>
+        <where>
+            `key` = #{storage.key}
+        </where>
+    </update>
+
+    <update id="setStorageDeleted">
+        update litemall_storage
+        <set>
+            deleted = true,
+            update_time = now(),
+        </set>
+        <where>
+            `key` = #{storage.key}
+        </where>
+    </update>
+
+
+    <resultMap id="BaseAdminMap" type="com.xjtuse.mall.bean.system.AdminRes">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+        <result column="role_ids" property="roleIds" typeHandler="com.xjtuse.mall.datahandler.String2IntegerArray"/>
+    </resultMap>
+
+    <sql id="Base_Admin_List">
+    id, username, password, last_login_ip, last_login_time, avatar, add_time, update_time,
+    deleted, role_ids
+  </sql>
+
+    <select id="queryadminList" resultMap="BaseAdminMap">
+        select
+        <include refid="Base_Admin_List"/>
+        from litemall_admin
+        <where>
+            deleted = false
+            <if test="username != null and username != ''">
+                and username like concat('%',concat(#{username},'%'))
+            </if>
+        </where>
+        <if test="pageUtil.sort!=null and pageUtil.order!=null
+                  and pageUtil.order!=null and pageUtil.order!=null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+        <if test="pageUtil.sort==null or pageUtil.order==null
+                  or pageUtil.order==null or pageUtil.order==null">
+            order by id desc
+            limit 0, 20
+        </if>
+    </select>
+
+    <select id="queryAdminCount" resultType="Integer">
+        select count(*)
+        from litemall_admin
+        <where>
+            deleted = false
+            <if test="username != null and username != ''">
+                and username like concat('%',concat(#{username},'%'))
+            </if>
+        </where>
+    </select>
+
+
+    <update id="setAdminDeleted">
+        update litemall_admin
+        <set>
+            deleted = true
+        </set>
+        <where>
+            id = #{admin.id}
+        </where>
+    </update>
+
+
+    <update id="updateAdminById">
+        update litemall_admin
+        <set>
+            username = #{admin.username},
+            password = #{admin.password},
+            avatar = #{admin.avatar},
+            update_time = now(),
+            role_ids = #{admin.roleIds,typeHandler=com.xjtuse.mall.datahandler.String2IntegerArray}
+        </set>
+        <where>
+            id = #{admin.id}
+            and deleted = false
+        </where>
+    </update>
+
+    <select id="queryPasswordByUsername" resultType="String">
+        select password from litemall_admin where username = #{username}
+    </select>
+
+    <resultMap id="BaseOptionMap" type="com.xjtuse.mall.bean.system.LabelValue">
+        <id column="id" property="value" jdbcType="INTEGER"/>
+        <result column="name" property="label" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Option_List">
+        id, `name`
+    </sql>
+
+    <insert id="insertAdmin" parameterType="com.xjtuse.mall.bean.system.Admin" useGeneratedKeys="true" keyProperty="id">
+        insert into litemall_admin
+        (username, password, avatar, add_time, role_ids)
+        values
+        (#{admin.username},#{admin.password},#{admin.avatar},now(),
+        #{admin.roleIds,typeHandler=com.xjtuse.mall.datahandler.String2IntegerArray})
+    </insert>
+
+
+
+
+
+
+    <select id="queryRoleOptions" resultMap="BaseOptionMap">
+        select
+        <include refid="Base_Option_List"/>
+        from litemall_role
+        <where>
+            deleted = 0
+        </where>
+    </select>
+
+
+
+
+    <resultMap id="BaseRoleMap" type="com.xjtuse.mall.bean.system.Role">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="desc" property="desc" jdbcType="VARCHAR" />
+        <result column="enabled" property="enabled" jdbcType="BIT" />
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+        <result column="deleted" property="deleted" jdbcType="BIT" />
+    </resultMap>
+    <sql id="Base_Role_List" >
+        id, `name`, `desc`, enabled, add_time, update_time
+    </sql>
+
+    <select id="queryAdminRoles" resultMap="BaseRoleMap">
+        select <include refid="Base_Role_List"/>
+        from litemall_role
+        <where>
+            deleted = false
+            <if test="role.name != null and role.name != ''">
+                and `name` like concat('%',#{role.name},'%')
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order}
+        limit #{pageUtil.start}, #{pageUtil.limit}
+    </select>
+
+    <select id="selectRolesCount" resultType="Integer">
+        select count(*)
+        from litemall_role
+        <where>
+            deleted = false
+            <if test="role.name != null and role.name != ''">
+                and `name` like concat('%',#{role.name},'%')
+            </if>
+        </where>
+    </select>
+
+    <update id="updateRoleById">
+        update litemall_role
+        <set>
+            `name` = #{role.name},
+            `desc` = #{role.desc},
+            update_time = now()
+        </set>
+        <where>
+            id = #{role.id}
+        </where>
+    </update>
+
+    <insert id="insertRole" parameterType="com.xjtuse.mall.bean.system.Role" useGeneratedKeys="true">
+        insert into litemall_role
+        (`name`, `desc`, add_time)
+        values
+        (#{role.name},#{role.desc},now())
+    </insert>
+
+    <delete id="setRoleDeleted">
+        delete from litemall_role
+        <where>
+            id = #{role.id}
+        </where>
+    </delete>
+
+
+
+
+</mapper>

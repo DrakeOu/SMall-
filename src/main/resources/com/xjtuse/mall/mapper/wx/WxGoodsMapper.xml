@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjtuse.mall.mapper.wx.WxGoodsMapper">
+    <resultMap id="GoodsMap" type="com.xjtuse.mall.bean.goods.Goods">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <result column="brand_id" property="brandId" jdbcType="INTEGER"/>
+        <result property="gallery" column="Gallery" typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="keywords" property="keywords" jdbcType="VARCHAR"/>
+        <result column="brief" property="brief" jdbcType="VARCHAR"/>
+        <result column="is_on_sale" property="isOnSale" jdbcType="BIT"/>
+        <result column="sort_order" property="sortOrder" jdbcType="SMALLINT"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="share_url" property="shareUrl" jdbcType="VARCHAR"/>
+        <result column="is_new" property="isNew" jdbcType="BIT"/>
+        <result column="is_hot" property="isHot" jdbcType="BIT"/>
+        <result column="unit" property="unit" jdbcType="VARCHAR"/>
+        <result column="counter_price" property="counterPrice" jdbcType="DECIMAL"/>
+        <result column="retail_price" property="retailPrice" jdbcType="DECIMAL"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+        <result column="detail" property="detail" jdbcType="LONGVARCHAR"/>
+    </resultMap>
+    <resultMap id="GoodsAttributeMap" type="com.xjtuse.mall.bean.goods.GoodsAttribute">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
+        <result column="attribute" property="attribute" jdbcType="VARCHAR"/>
+        <result column="value" property="value" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+    <resultMap id="GoodsProducttMap" type="com.xjtuse.mall.bean.goods.GoodsProduct">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
+        <result column="specifications" property="specifications"
+                typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="number" property="number" jdbcType="INTEGER"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+    <resultMap id="GoodsSpecificationMap" type="com.xjtuse.mall.bean.goods.GoodsSpecification">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
+        <result column="specification" property="specification" jdbcType="VARCHAR"/>
+        <result column="value" property="value" jdbcType="VARCHAR"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <resultMap id="CategoryMap" type="com.xjtuse.mall.bean.mall.Category">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="keywords" property="keywords" jdbcType="VARCHAR"/>
+        <result column="desc" property="desc" jdbcType="VARCHAR"/>
+        <result column="pid" property="pid" jdbcType="INTEGER"/>
+        <result column="icon_url" property="iconUrl" jdbcType="VARCHAR"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="level" property="level" jdbcType="VARCHAR"/>
+        <result column="sort_order" property="sortOrder" jdbcType="TINYINT"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <resultMap id="BrandMap" type="com.xjtuse.mall.bean.mall.Brand">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="desc" property="desc" jdbcType="VARCHAR"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="sort_order" property="sortOrder" jdbcType="TINYINT"/>
+        <result column="floor_price" property="floorPrice" jdbcType="DECIMAL"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+
+    <select id="queryPriCate" resultMap="CategoryMap">
+        select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
+        from litemall_category
+        where deleted = 0 and pid = 0
+    </select>
+
+    <select id="queryCountBrand" resultMap="BrandMap">
+        select id, name, `desc`, pic_url, sort_order, floor_price, add_time, update_time, deleted
+        from litemall_brand
+        where deleted = 0
+        limit 0, #{count}
+    </select>
+
+    <select id="queryCountHotest" resultMap="GoodsMap">
+        select id, goods_sn, name, category_id, brand_id, gallery, keywords, brief, is_on_sale, sort_order, pic_url, share_url, is_new, is_hot, unit, counter_price, retail_price, detail, add_time, update_time, deleted
+        from litemall_goods
+        where deleted = 0 and is_hot = 1
+        limit 0, #{count}
+    </select>
+
+    <select id="queryCountNewGoods" resultMap="GoodsMap">
+        select id, goods_sn, name, category_id, brand_id, gallery, keywords, brief, is_on_sale, sort_order, pic_url, share_url, is_new, is_hot, unit, counter_price, retail_price, detail, add_time, update_time, deleted
+        from litemall_goods
+        where deleted = 0 and is_new = 1
+        limit 0, #{count}
+    </select>
+
+    <select id="queryGoodsList" resultMap="GoodsMap">
+        select id, goods_sn, name, category_id, brand_id, gallery, keywords, brief, is_on_sale, sort_order, pic_url, share_url, is_new, is_hot, unit, counter_price, retail_price, detail, add_time, update_time, deleted
+        from litemall_goods
+        <where>
+            deleted = 0
+            <if test="goods.isHot!=null and goods.isHot == true">
+                and is_hot = 1
+            </if>
+            <if test="goods.isNew!=null and goods.isNew == true">
+                and is_new = 1
+            </if>
+            <if test="goods.keywords != null and goods.keywords != ''">
+                and keywords like concat('%',concat(#{goods.keywords},'%' ))
+            </if>
+            <if test="goods.brandId!=null">
+                and brand_id = #{goods.brandId}
+            </if>
+            <if test="goods.categoryId!=null">
+                and category_id = #{goods.categoryId}
+            </if>
+            <if test="goods.id != null">
+                and goods_sn = #{goods.id}
+            </if>
+        </where>
+        <if test="pageUtil != null and pageUtil.sort != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+        </if>
+        <if test="pageUtil != null and pageUtil.start != null">
+            limit #{pageUtil.start},#{pageUtil.limit}
+        </if>
+
+    </select>
+
+    <select id="countGoods" resultType="int">
+        select count(*)
+        from litemall_goods
+    </select>
+
+    <select id="querySpecificationById" resultMap="GoodsSpecificationMap">
+        select id, goods_id, specification, value, pic_url, add_time, update_time, deleted
+        from litemall_goods_specification
+        where goods_id = #{id}
+    </select>
+
+    <select id="queryProductByGoods" resultMap="GoodsProducttMap">
+        select id, goods_id, specifications, price, number, url, add_time, update_time, deleted
+        from litemall_goods_product
+        where goods_id = #{id}
+    </select>
+
+    <select id="queryAttribute" resultMap="GoodsAttributeMap">
+        select id, goods_id, attribute, value, add_time, update_time, deleted
+        from litemall_goods_attribute
+        where goods_id = #{id}
+    </select>
+
+    <select id="queryCate" resultMap="GoodsMap">
+        select category_id
+        from litemall_goods
+        where deleted = 0 and id = #{id}
+    </select>
+
+    <select id="queryCountCate" resultType="int">
+        select count(*)
+        from litemall_goods
+        where category_id = #{categoryId}
+    </select>
+
+    <select id="queryCountGoods" resultType="int">
+        select count(*)
+        from litemall_goods
+    </select>
+
+    <select id="queryBrandCount" resultType="int">
+        select count(*)
+        from litemall_brand
+    </select>
+
+    <select id="queryBrandList" resultMap="BrandMap">
+        select id, name, `desc`, pic_url, sort_order, floor_price, add_time, update_time, deleted
+        from litemall_brand
+        where deleted = 0
+        <if test="id!=null">
+            and id = #{id}
+        </if>
+    </select>
+
+    <select id="queryL1" resultMap="CategoryMap">
+        select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
+        from litemall_category
+        where pid = 0
+    </select>
+
+    <select id="findCateById" resultMap="CategoryMap">
+        select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
+        from litemall_category
+        where id = #{id}
+    </select>
+
+    <select id="queryCateByPid" resultMap="CategoryMap">
+        select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
+        from litemall_category
+        where pid = #{id}
+    </select>
+</mapper>

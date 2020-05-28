@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xjtuse.mall.mapper.admin.PromotionMapper">
+
+    <!--广告-->
+    <resultMap id="AdResultMap" type="com.xjtuse.mall.bean.promotion.Ad">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="link" property="link"/>
+        <result column="url" property="url"/>
+        <result column="position" property="position"/>
+        <result column="content" property="content"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="enabled" property="enabled"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!--优惠券-->
+    <resultMap id="CouponResultMap" type="com.xjtuse.mall.bean.promotion.Coupon">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="desc" property="desc"/>
+        <result column="tag" property="tag"/>
+        <result column="total" property="total"/>
+        <result column="discount" property="discount"/>
+        <result column="min" property="min"/>
+        <result column="limit" property="limit"/>
+        <result column="type" property="type"/>
+        <result column="status" property="status"/>
+        <result column="goods_type" property="goodsType"/>
+        <result column="goods_value" property="goodsValue" typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="code" property="code"/>
+        <result column="time_type" property="timeType"/>
+        <result column="days" property="days"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!--优惠券用户表-->
+    <resultMap id="CouponUserResultMap" type="com.xjtuse.mall.bean.promotion.CouponAndUser">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="coupon_id" property="couponId"/>
+        <result column="status" property="status"/>
+        <result column="used_time" property="usedTime"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="order_id" property="orderId"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <sql id="Base_Ad_List">
+        id, `name`, link, url, position, content, start_time, end_time, enabled, add_time, update_time, deleted
+    </sql>
+    <!--标题表-->
+    <resultMap id="TopicResultMap" type="com.xjtuse.mall.bean.promotion.Topic">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="subtitle" property="subtitle"/>
+        <result column="content" property="content"/>
+        <result column="price" property="price"/>
+        <result column="read_count" property="readCount"/>
+        <result column="pic_url" property="picUrl"/>
+        <result column="sortOrder" property="sortOrder"/>
+        <result column="goods" property="goods" typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <!--团购表-->
+    <resultMap id="GrouponResultMap" type="com.xjtuse.mall.bean.promotion.Groupon">
+        <result column="id" property="id"/>
+        <result column="order_id" property="orderId"/>
+        <result column="groupon_id" property="grouponId"/>
+        <result column="rules_id" property="rulesId"/>
+        <result column="user_id" property="userId"/>
+        <result column="creator_user_id" property="creatorUserId"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="share_url" property="shareUrl"/>
+        <result column="payed" property="payed"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <!--团购规则表-->
+    <resultMap id="GrouponRulesResultMap" type="com.xjtuse.mall.bean.promotion.GrouponRules">
+        <result column="id" property="id"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="pic_url" property="picUrl"/>
+        <result column="discount" property="discount"/>
+        <result column="discount_member" property="discountMember"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="expire_time" property="expireTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <select id="queryAd" resultMap="AdResultMap">
+        select
+        <include refid="Base_Ad_List"/>
+        from litemall_ad
+        where deleted = 0
+        <if test="ad.name != null and ad.name != ''">
+            and `name` like concat('%',concat(#{ad.name},'%'))
+        </if>
+        <if test="ad.content != null and ad.content != ''">
+            and content like concat('%',concat(#{ad.content},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryAdCount" resultType="int">
+        select count(*)
+        from litemall_ad
+        where deleted = 0
+        <if test="ad.name != null and ad.name != ''">
+            and `name` like concat('%',concat(#{ad.name},'%'))
+        </if>
+        <if test="ad.content != null and ad.content != ''">
+            and content like concat('%',concat(#{ad.content},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <update id="updateAd">
+        update litemall_ad set
+        `name` = #{name},
+        link = #{link},
+        url = #{url},
+        position = #{position},
+        content = #{content},
+        start_time = #{startTime},
+        end_time = #{endTime},
+        enabled = #{enabled},
+        add_time = #{addTime},
+        update_time = #{updateTime},
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <update id="deleteAd">
+        update litemall_ad set
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <insert id="createAd">
+        insert into litemall_ad
+        (`name`, link, url, position, content, start_time, end_time, enabled, add_time, update_time)
+        value
+        (#{name}, #{link}, #{url}, #{position}, #{content}, #{startTime}, #{endTime}, #{enabled}, #{addTime}, #{updateTime})
+    </insert>
+
+    <sql id="Base_Coupon_List">
+        id, `name`, `desc`, tag, total, discount, min, `limit`, type, `status`, goods_type, goods_value, `code`, time_type, days, start_time, end_time, add_time, update_time, deleted
+    </sql>
+
+    <select id="queryCoupon" resultMap="CouponResultMap">
+        select
+        <include refid="Base_Coupon_List"/>
+        from litemall_coupon
+        where deleted = 0
+        <if test="coupon.name != null and coupon.name != ''">
+            and `name` like concat('%',concat(#{coupon.name},'%'))
+        </if>
+        <if test="coupon.type != null and coupon.type != ''">
+            and type like concat('%',concat(#{coupon.type},'%'))
+        </if>
+        <if test="coupon.status != null and coupon.status != ''">
+            and `status` like concat('%',concat(#{coupon.status},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryCouponCount" resultType="int">
+        select count(*)
+        from litemall_coupon
+        where deleted = 0
+        <if test="coupon.name != null and coupon.name != ''">
+            and `name` like concat('%',concat(#{coupon.name},'%'))
+        </if>
+        <if test="coupon.type != null and coupon.type != ''">
+            and type like concat('%',concat(#{coupon.type},'%'))
+        </if>
+        <if test="coupon.status != null and coupon.status != ''">
+            and `status` like concat('%',concat(#{coupon.status},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+<!--    parse StringArray2String-->
+    <sql id="goodsValueParse">
+        <if test="goodsValue != null and goodsValue.length>0">
+            <foreach collection="goodsValue" open="[" close="]" item="value" separator=",">
+                #{value}
+            </foreach>
+        </if>
+        <if test="goodsValue == null || goodsValue.length == 0">
+            '[]'
+        </if>
+    </sql>
+
+    <update id="updateCoupon">
+        update litemall_coupon set
+        `name` = #{name},
+        `desc` = #{desc},
+        tag = #{tag},
+        total = #{total},
+        discount = #{discount},
+        min = #{min},
+        `limit` = #{limit},
+        type = #{type},
+        status = #{status},
+        goods_type = #{goodsType},
+        goods_value = <include refid="goodsValueParse"/>,
+        code = #{code},
+        time_type = #{timeType},
+        days = #{days},
+        start_time = #{startTime},
+        end_time = #{endTime},
+        add_time = #{addTime},
+        update_time = #{updateTime},
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <update id="deleteCoupon">
+        update litemall_coupon set
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <insert id="createCoupon">
+        insert into litemall_coupon
+        (`name`, `desc`, tag, total, discount, min, `limit`, type, `status`, goods_type, goods_value, `code`, time_type, days, start_time, end_time, add_time, update_time, deleted)
+        values
+        (#{name}, #{desc}, #{tag}, #{total}, #{discount}, #{min}, #{limit}, #{type}, #{status}, #{goodsType},
+#          插入字符串数组
+         <if test="goodsValue != null and goodsValue.length>0">
+             <foreach collection="goodsValue" open="[" close="]" item="value" separator=",">
+                 #{value}
+             </foreach>
+         </if>
+         <if test="goodsValue == null || goodsValue.length == 0">
+             '[]'
+         </if> ,
+         #{code}, #{timeType}, #{days}, #{startTime}, #{endTime}, #{addTime}, #{updateTime}, #{deleted})
+    </insert>
+
+    <select id="queryCouponById" resultMap="CouponResultMap">
+        select
+        <include refid="Base_Coupon_List"/>
+        from litemall_coupon
+        where id = #{id}
+    </select>
+
+    <sql id="Base_CUser_List">
+        id, user_id, coupon_id, `status`, used_time, start_time, end_time, order_id, add_time, update_time, deleted
+    </sql>
+
+    <select id="queryCouponUser" resultMap="CouponUserResultMap">
+        select
+        <include refid="Base_CUser_List"/>
+        from litemall_coupon_user
+        where deleted = 0 and coupon_id = #{couponUser.couponId}
+        <if test="couponUser.userId != null and couponUser.userId != ''">
+            and user_id like concat('%',concat(#{couponUser.userId},'%'))
+        </if>
+        <if test="couponUser.status != null and couponUser.status != ''">
+            and status like concat('%',concat(#{couponUser.status},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryCouponUserCount" resultType="int">
+        select
+        count(*)
+        from litemall_coupon_user
+        where deleted = 0 and coupon_id = #{couponUser.couponId}
+        <if test="couponUser.userId != null and couponUser.userId != ''">
+            and user_id like concat('%',concat(#{couponUser.userId},'%'))
+        </if>
+        <if test="couponUser.status != null and couponUser.status != ''">
+            and status like concat('%',concat(#{couponUser.status},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <sql id="Base_Topic_List">
+        id, title, subtitle, content, price, read_count, pic_url, sort_order, goods, add_time, update_time, deleted
+    </sql>
+
+    <select id="queryTopic" resultMap="TopicResultMap">
+        select
+        <include refid="Base_Topic_List"/>
+        from litemall_topic
+        where deleted = 0
+        <if test="topic.title != null and topic.title != ''">
+            and title like concat('%',concat(#{topic.title},'%'))
+        </if>
+        <if test="topic.subtitle != null and topic.subtitle != ''">
+            and subtitle like concat('%',concat(#{topic.subtitle},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryTopicCount" resultType="int">
+        select
+        count(*)
+        from litemall_topic
+        where deleted = 0
+        <if test="topic.title != null and topic.title != ''">
+            and title like concat('%',concat(#{topic.title},'%'))
+        </if>
+        <if test="topic.subtitle != null and topic.subtitle != ''">
+            and subtitle like concat('%',concat(#{topic.subtitle},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <sql id="goodsParse">
+        <if test="goods != null and goods.length>0">
+            <foreach collection="goods" open="[" close="]" item="value" separator=",">
+                #{value}
+            </foreach>
+        </if>
+        <if test="goods == null || goods.length == 0">
+            '[]'
+        </if>
+    </sql>
+
+    <update id="updateTopic">
+        update litemall_topic set
+        title = #{title},
+        subtitle = #{subtitle},
+        content = #{content},
+        price = #{price},
+        read_count = #{readCount},
+        pic_url = #{picUrl},
+        sort_order = #{sortOrder},
+        goods = <include refid="goodsParse"/>,
+        add_time = #{addTime},
+        update_time = #{updateTime},
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <update id="deleteTopic">
+        update litemall_topic set
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <insert id="createTopic">
+        insert into litemall_topic
+        (title, subtitle, content, price, read_count, pic_url, sort_order, goods, add_time, update_time, deleted)
+        values
+        (#{title}, #{subtitle}, #{content}, #{price}, #{readCount}, #{picUrl}, #{sortOrder},
+        <if test="goods != null and goods.length>0">
+            <foreach collection="goods" open="[" close="]" item="value" separator=",">
+                #{value}
+            </foreach>
+        </if>
+        <if test="goods == null || goods.length == 0">
+            '[]'
+        </if>,
+         #{addTime}, #{updateTime}, #{deleted})
+    </insert>
+
+    <sql id="Base_Groupon_List">
+        id, order_id, groupon_id, rules_id, user_id, creator_user_id, add_time, update_time, share_url, payed, deleted
+    </sql>
+
+    <select id="queryGrouponIdDistinct" resultType="int">
+        select
+        distinct groupon_id
+        from litemall_groupon
+        where deleted = 0
+        <if test="groupon.rulesId != null">
+            and rules_id = #{groupon.rulesId}
+        </if>
+        <if test="pageUtil.page != null">
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryGrouponCount" resultType="int">
+        select
+        count(distinct groupon_id)
+        from litemall_groupon
+        where deleted = 0
+        <if test="groupon.rulesId != null">
+            and rules_id = #{groupon.rulesId}
+        </if>
+        <if test="pageUtil.page != null">
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryGrouponByGid" resultMap="GrouponResultMap">
+        select <include refid="Base_Groupon_List"/>
+        from litemall_groupon
+        where groupon_id = #{grouponId}
+    </select>
+
+    <select id="queryRelativeRules" resultMap="GrouponRulesResultMap">
+        select <include refid="Base_GrouponRules_List"/>
+        from litemall_groupon_rules
+        where id = #{rulesId}
+    </select>
+
+    <select id="queryRulesIdByGoodsId" resultType="int">
+        select id
+        from litemall_groupon_rules
+        where goods_id = #{goodsId};
+    </select>
+
+    <sql id="Base_GrouponRules_List">
+        id, goods_id, goods_name, pic_url, discount, discount_member, add_time, update_time, expire_time, deleted
+    </sql>
+
+    <select id="queryGrouponRules" resultMap="GrouponRulesResultMap">
+        select
+        <include refid="Base_GrouponRules_List"/>
+        from litemall_groupon_rules
+        where deleted = 0
+        <if test="rules.goodsId != null">
+            and goods_id like concat('%',concat(#{rules.goodsId},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryGrouponRulesCount" resultType="int">
+        select
+        count(*)
+        from litemall_groupon_rules
+        where deleted = 0
+        <if test="rules.goodsId != null">
+            and goods_id like concat('%',concat(#{rules.goodsId},'%'))
+        </if>
+        <if test="pageUtil.page != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+            limit #{pageUtil.start}, #{pageUtil.limit}
+        </if>
+    </select>
+
+    <update id="updateGrouponRules">
+        update litemall_groupon_rules set
+        goods_id = #{goodsId},
+        goods_name = #{goodsName},
+        pic_url = #{picUrl},
+        discount = #{discount},
+        discount_member = #{discountMember},
+        add_time = #{addTime},
+        update_time = #{updateTime},
+        expire_time = #{expireTime},
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <update id="deleteGrouponRules">
+        update litemall_groupon_rules set
+        deleted = #{deleted}
+        where id = #{id}
+    </update>
+
+    <resultMap id="BaseResultMap" type="com.xjtuse.mall.bean.goods.Goods">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <result column="brand_id" property="brandId" jdbcType="INTEGER"/>
+        <result property="gallery" column="Gallery" typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="keywords" property="keywords" jdbcType="VARCHAR"/>
+        <result column="brief" property="brief" jdbcType="VARCHAR"/>
+        <result column="is_on_sale" property="isOnSale" jdbcType="BIT"/>
+        <result column="sort_order" property="sortOrder" jdbcType="SMALLINT"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="share_url" property="shareUrl" jdbcType="VARCHAR"/>
+        <result column="is_new" property="isNew" jdbcType="BIT"/>
+        <result column="is_hot" property="isHot" jdbcType="BIT"/>
+        <result column="unit" property="unit" jdbcType="VARCHAR"/>
+        <result column="counter_price" property="counterPrice" jdbcType="DECIMAL"/>
+        <result column="retail_price" property="retailPrice" jdbcType="DECIMAL"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+        <result column="detail" property="detail" jdbcType="LONGVARCHAR"/>
+    </resultMap>
+
+    <insert id="createGrouponRules">
+        insert into litemall_groupon_rules
+        (goods_id, goods_name, pic_url, discount, discount_member, add_time, update_time, expire_time, deleted)
+        values
+        (#{goodsId}, #{goodsName}, #{picUrl}, #{discount}, #{discountMember}, #{addTime}, #{updateTime}, #{expireTime}, #{deleted})
+    </insert>
+
+    <select id="queryGoodsById"  resultMap="BaseResultMap">
+        select *
+        from litemall_goods
+        where id = #{goodsId};
+    </select>
+
+</mapper>

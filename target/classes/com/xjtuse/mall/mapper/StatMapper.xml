@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjtuse.mall.mapper.admin.StatMapper">
+    <!--订单map-->
+    <resultMap id="OrderResultMap" type="com.xjtuse.mall.bean.mall.Order">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="order_sn" property="orderSn"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="consignee" property="consignee"/>
+        <result column="mobile" property="mobile"/>
+        <result column="address" property="address"/>
+        <result column="message" property="message"/>
+        <result column="goods_price" property="goodsPrice"/>
+        <result column="freight_price" property="freightPrice"/>
+        <result column="coupon_price" property="couponPrice"/>
+        <result column="integral_price" property="integralPrice"/>
+        <result column="groupon_price" property="grouponPrice"/>
+        <result column="order_price" property="orderPrice"/>
+        <result column="actual_price" property="actualPrice"/>
+        <result column="pay_id" property="payId"/>
+        <result column="pay_time" property="payTime"/>
+        <result column="ship_sn" property="shipSn"/>
+        <result column="ship_channel" property="shipChannel"/>
+        <result column="ship_time" property="shipTime"/>
+        <result column="confirm_time" property="confirmTime"/>
+        <result column="comments" property="comments"/>
+        <result column="end_time" property="endTime"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <!--1 会员管理//////////////////////////////////////////////////////-->
+    <resultMap id="resultUserMap" type="com.xjtuse.mall.bean.user.User">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="last_login_ip" property="lastLoginIp"/>
+        <result column="user_level" property="userLevel"/>
+        <result column="nickname" property="nickname"/>
+        <result column="mobile" property="mobile"/>
+        <result column="avatar" property="avatar"/>
+        <result column="weixin_openid" property="weixinOpenid"/>
+        <result column="status" property="status"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <!--订单货物表-->
+    <resultMap id="OrderAndGoodsMap" type="com.xjtuse.mall.bean.mall.OrderAndGoods">
+        <result column="id" property="id"/>
+        <result column="orderId" property="orderId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="goods_sn" property="goodsSn"/>
+        <result column="product_id" property="productId"/>
+        <result column="number" property="number"/>
+        <result column="price" property="price"/>
+        <result column="specifications" property="specifications"/>
+        <result column="pic_url" property="picUrl"/>
+        <result column="comment" property="comment"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <sql id="Order_Goods_List">
+        id, order_id, goods_id, goods_name, goods_sn, product_id, `number`, price, specifications, pic_url, comment, add_time, update_time, deleted
+    </sql>
+
+    <select id="queryAllUser" resultMap="resultUserMap">
+        select id, username
+        from litemall_user
+    </select>
+
+    <select id="queryAllUserAddDate" resultType="date">
+        select DATE(add_time) as date
+        from litemall_user
+        group by date order by date
+    </select>
+
+    <select id="queryNewUserOfDate" resultType="int">
+        select count(*)
+        from litemall_user
+        where DATE_FORMAT(add_time, '%Y-%m-%d') = #{date}
+    </select>
+
+    <select id="queryOrderByUser" resultMap="OrderResultMap">
+        select *
+        from litemall_order
+        where user_id = #{id}
+    </select>
+
+    <select id="queryAllOrderDate" resultType="date">
+        select DATE(add_time) as date
+        from litemall_order
+        group by date order by date
+    </select>
+
+    <select id="queryOrderByDate" resultMap="OrderResultMap">
+        select * from litemall_order
+        where DATE_FORMAT(add_time, '%Y-%m-%d') = #{date};
+    </select>
+
+    <select id="queryGoodsCount" resultMap="OrderAndGoodsMap">
+        select <include refid="Order_Goods_List"/>
+        from litemall_order_goods
+        where order_id = #{id}
+    </select>
+</mapper>

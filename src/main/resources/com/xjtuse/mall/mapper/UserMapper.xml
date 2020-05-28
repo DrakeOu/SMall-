@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xjtuse.mall.mapper.admin.UserMapper">
+
+    <!--1 会员管理//////////////////////////////////////////////////////-->
+    <resultMap id="resultUserMap" type="com.xjtuse.mall.bean.user.User">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="last_login_ip" property="lastLoginIp"/>
+        <result column="user_level" property="userLevel"/>
+        <result column="nickname" property="nickname"/>
+        <result column="mobile" property="mobile"/>
+        <result column="avatar" property="avatar"/>
+        <result column="weixin_openid" property="weixinOpenid"/>
+        <result column="status" property="status"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <sql id="Base_UserColumn_List">
+        id,username,password,gender,birthday,last_login_time,last_login_ip,
+        user_level,nickname,mobile,avatar,weixin_openid,status,add_time,update_time,deleted
+    </sql>
+
+    <select id="queryById" resultMap="resultUserMap">
+        select
+        <include refid="Base_UserColumn_List"/>
+        from litemall_user
+        where id=#{id}
+    </select>
+
+    <select id="queryAllUser" resultMap="resultUserMap">
+        select
+        <include refid="Base_UserColumn_List"/>
+        from litemall_user
+        <where>
+            <if test="user.username != null">
+                username like "%"#{user.username}"%"
+            </if>
+            <if test="user.mobile != null">
+                and mobile like "%"#{user.mobile}"%"
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryUserCount" resultType="Integer">
+        select count(id)
+        from litemall_user
+        <where>
+            <if test="user.username != null">
+                username like "%"#{user.username}"%"
+            </if>
+            <if test="user.mobile != null">
+                and mobile like "%"#{user.mobile}"%"
+            </if>
+        </where>
+
+    </select>
+
+
+    <!--2 收货地址//////////////////////////////////////////////////////-->
+    <resultMap id="resultAddressMap" type="com.xjtuse.mall.bean.user.Address">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="name" property="name"/>
+        <result column="province_id" property="provinceId"/>
+        <result column="city_id" property="cityId"/>
+        <result column="area_id" property="areaId"/>
+        <result column="address" property="address"/>
+        <result column="mobile" property="mobile"/>
+        <result column="is_default" property="isDefault"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <sql id="Base_AddressColumn_List">
+    id,`name`,user_id,province_id,city_id,area_id,address,
+    mobile,is_default,add_time,update_time,deleted
+    </sql>
+
+    <select id="queryAddress" resultMap="resultAddressMap">
+        select
+        <include refid="Base_AddressColumn_List"/>
+        from litemall_address
+        <where>
+            <if test="address.userId != null">
+                user_id like concat(concat('%',#{address.userId}),'%')
+            </if>
+            <if test="address.name != null and address.name != ''">
+                and `name` like concat(concat('%',#{address.name}),'%')
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryAddressCount" resultType="Integer">
+        select count(id)
+        from litemall_address
+        <where>
+            <if test="address.userId != null">
+                user_id like concat(concat('%',#{address.userId}),'%')
+            </if>
+            <if test="address.name != null and address.name != ''">
+                and `name` like concat(concat('%',#{address.name}),'%')
+            </if>
+        </where>
+    </select>
+
+
+    <!--    3 会员收藏//////////////////////////////////////////////////////-->
+    <resultMap id="resultCollectMap" type="com.xjtuse.mall.bean.user.Collect">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="value_id" property="valueId"/>
+        <result column="type" property="type"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <sql id="Base_CollectColumn_List">
+              id,user_id,value_id,`type`,add_time,update_time,deleted
+    </sql>
+
+    <select id="queryCollect" resultMap="resultCollectMap">
+        select
+        <include refid="Base_CollectColumn_List"/>
+        from litemall_collect
+        <where>
+            <if test="collect.userId != null ">
+                and user_id like concat('%',concat(#{collect.userId},'%'))
+            </if>
+            <if test="collect.valueId != null">
+                and value_id like concat('%',concat(#{collect.valueId},'%'))
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryCollectCount" resultType="Integer">
+        select count(*)
+        from litemall_collect
+        <where>
+            <if test="collect.userId != null ">
+                and user_id like concat('%',concat(#{collect.userId},'%'))
+            </if>
+            <if test="collect.valueId != null">
+                and value_id like concat('%',concat(#{collect.valueId},'%'))
+            </if>
+        </where>
+    </select>
+
+    <!--4 会员足迹//////////////////////////////////////////////////////-->
+    <resultMap id="resultFootPrintMap" type="com.xjtuse.mall.bean.user.Footprint">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <sql id="Base_FootPrintColumn_List">
+              id,user_id,goods_id,add_time,update_time,deleted
+    </sql>
+
+    <select id="queryFootprint" resultMap="resultFootPrintMap">
+        select
+        <include refid="Base_FootPrintColumn_List"/>
+        from litemall_footprint
+        <where>
+            <if test="footprint.userId != null">
+                user_id like concat('%',concat(#{footprint.userId},'%'))
+            </if>
+            <if test="footprint.goodsId != null">
+                and goods_id like concat('%',concat(#{footprint.goodsId},'%'))
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryFootprintCount" resultType="Integer">
+        select count(*)
+        from litemall_footprint
+        <where>
+            <if test="footprint.userId != null">
+                user_id like concat('%',concat(#{footprint.userId},'%'))
+            </if>
+            <if test="footprint.goodsId != null">
+                and goods_id like concat('%',concat(#{footprint.goodsId},'%'))
+            </if>
+        </where>
+    </select>
+
+    <!--5 搜索历史//////////////////////////////////////////////////////-->
+    <resultMap id="resultHistoryMap" type="com.xjtuse.mall.bean.user.SearchHistory">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="keyword" property="keyword"/>
+        <result column="from" property="from"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <sql id="Base_HistoryColumn_List">
+              id,user_id,keyword,`from`,add_time,update_time,deleted
+    </sql>
+
+    <select id="querySearchHistory" resultMap="resultHistoryMap">
+        select
+        <include refid="Base_HistoryColumn_List"/>
+        from litemall_search_history
+        <where>
+            <if test="searchHistory.userId != null">
+                user_id like concat('%',concat(#{searchHistory.userId},'%'))
+            </if>
+            <if test="searchHistory.keyword != null and searchHistory.keyword != ''">
+                and keyword like concat('%',concat(#{searchHistory.keyword},'%'))
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="querySearchHistoryCount" resultType="Integer">
+        select count(*) from litemall_search_history
+        <where>
+            <if test="searchHistory.userId != null">
+                user_id like concat('%',concat(#{searchHistory.userId},'%'))
+            </if>
+            <if test="searchHistory.keyword != null and searchHistory.keyword != ''">
+                and keyword like concat('%',concat(#{searchHistory.keyword},'%'))
+            </if>
+        </where>
+    </select>
+
+    <!--6 意见反馈//////////////////////////////////////////////////////-->
+    <resultMap id="resultFeedBackMap" type="com.xjtuse.mall.bean.user.Feedback">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="mobile" property="mobile"/>
+        <result column="feed_type" property="feedType"/>
+        <result column="content" property="content"/>
+        <result column="status" property="status"/>
+        <result column="has_picture" property="hasPicture"/>
+        <result column="pic_urls" property="picUrls"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+    <sql id="Base_FeedBackColumn_List">
+              id,user_id,username,mobile,feed_type,content,status,
+              has_picture,pic_urls,add_time,update_time,deleted
+    </sql>
+
+    <select id="queryFeedback" resultMap="resultFeedBackMap">
+        select
+        <include refid="Base_FeedBackColumn_List"/>
+        from litemall_feedback
+        <where>
+            <if test="feedback.username != null and feedback.username != ''">
+                username like concat('%',concat(#{feedback.username},'%'))
+            </if>
+            <if test="feedback.id != null">
+                and id like concat('%',concat(#{feedback.id},'%'))
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryFeedbackCount" resultType="Integer">
+        select count(*) from litemall_feedback
+        <where>
+            <if test="feedback.username != null">
+                username like concat('%',concat(#{feedback.username},'%'))
+            </if>
+            <if test="feedback.id != null and feedback.username != ''">
+                and id like concat('%',concat(#{feedback.id},'%'))
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
+
+

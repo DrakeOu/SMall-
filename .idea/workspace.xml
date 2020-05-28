@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6f32ea06-c3e1-4810-8e99-2926139b60ef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/SmallApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/SmallApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/MallController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/MallController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/PromotionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/PromotionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/StatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/StatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/SystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/SystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/admin/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/customException/CustomExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/customException/CustomExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/customException/JsonInputExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/customException/JsonInputExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/ConfigMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/ConfigMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/GoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/MallMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/MallMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/PromotionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/PromotionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/StatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/StatMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/SystemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/SystemMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/admin/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/ConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/ConfigService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/MallService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/MallService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/PromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/PromotionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/StatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/StatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/SystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/SystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/ConfigServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/MallServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/MallServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/PromotionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/PromotionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/StatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/StatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/SystemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/SystemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/admin/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/shiro/CustomRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/shiro/CustomRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/ResultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/ResultUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/ConfigMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/ConfigMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/MallMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/MallMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/PromotionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/PromotionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/StatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/StatMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/SystemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/SystemMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/UserMapper.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="litemall: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="DrakeOu &lt;279535610@qq.com&gt;" />
+        <option value="DrakeOu" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="ProjectId" id="1Z6IMDDcafufk2LDrmbQGCeiQQd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="cassandra&#10;mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\java-\small\small\src\main\resources\static\img" />
+      <recent name="E:\code\java-\small\small\src\test\java" />
+      <recent name="E:\code\java-\small\small\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xjtuse.mall.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\java-\small\small\src\main\java\com\xjtuse\mall" />
+      <recent name="E:\code\java-\small\small\src\main\resources\static" />
+      <recent name="E:\code\java-\small\small\src\main\resources\static\img" />
+      <recent name="E:\code\java-\small\small\src\test" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SmallApplication">
+    <configuration name="MallMapperTest.OrderGoodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="small" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MallMapperTest" />
+      <option name="METHOD_NAME" value="OrderGoodsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallMapperTest.queryIssueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="small" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MallMapperTest" />
+      <option name="METHOD_NAME" value="queryIssueTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallMapperTest.queryUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="small" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MallMapperTest" />
+      <option name="METHOD_NAME" value="queryUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatMapperTest.queryDateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="small" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StatMapperTest" />
+      <option name="METHOD_NAME" value="queryDateTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatMapperTest.queryGoodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="small" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StatMapperTest" />
+      <option name="METHOD_NAME" value="queryGoodsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmallApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="small" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xjtuse.mall.SmallApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StatMapperTest.queryGoodsTest" />
+        <item itemvalue="JUnit.StatMapperTest.queryDateTest" />
+        <item itemvalue="JUnit.MallMapperTest.queryIssueTest" />
+        <item itemvalue="JUnit.MallMapperTest.queryUserTest" />
+        <item itemvalue="JUnit.MallMapperTest.OrderGoodsTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f4496996" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f4496996" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6d356ce3" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f32ea06-c3e1-4810-8e99-2926139b60ef" name="Default Changelist" comment="" />
+      <created>1584153066793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584153066793</updated>
+      <workItem from="1584153069457" duration="5720000" />
+      <workItem from="1584163093400" duration="33277000" />
+      <workItem from="1584198727677" duration="94000" />
+      <workItem from="1584200575686" duration="3161000" />
+      <workItem from="1584237314311" duration="29686000" />
+      <workItem from="1584270689600" duration="10981000" />
+      <workItem from="1584323312024" duration="37086000" />
+      <workItem from="1584423972750" duration="15224000" />
+      <workItem from="1584509001800" duration="24463000" />
+      <workItem from="1584584315937" duration="4410000" />
+      <workItem from="1584608607688" duration="792000" />
+      <workItem from="1584687491494" duration="854000" />
+      <workItem from="1584853627746" duration="624000" />
+      <workItem from="1585028049197" duration="5078000" />
+      <workItem from="1585122565513" duration="614000" />
+      <workItem from="1585723496236" duration="635000" />
+      <workItem from="1586175709660" duration="1168000" />
+      <workItem from="1586767714708" duration="3994000" />
+      <workItem from="1586776853413" duration="1173000" />
+      <workItem from="1589207430460" duration="353000" />
+      <workItem from="1590284741560" duration="17763000" />
+      <workItem from="1590378079827" duration="13692000" />
+      <workItem from="1590407082934" duration="4667000" />
+      <workItem from="1590489195858" duration="2483000" />
+      <workItem from="1590491715149" duration="4085000" />
+      <workItem from="1590632384867" duration="16416000" />
+    </task>
+    <task id="LOCAL-00001" summary="品牌制造商完善，添加common">
+      <created>1584196542530</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584196542531</updated>
+    </task>
+    <task id="LOCAL-00002" summary="完成订单管理detail">
+      <created>1584272443102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584272443102</updated>
+    </task>
+    <task id="LOCAL-00003" summary="通用问题完成，及部分关键字功能">
+      <created>1584282487609</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584282487609</updated>
+    </task>
+    <task id="LOCAL-00004" summary="推广管理完成，除团购部分">
+      <created>1584350270605</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584350270605</updated>
+    </task>
+    <task id="LOCAL-00005" summary="完善推广模块，增加自定义异常处理">
+      <created>1584369096098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584369096098</updated>
+    </task>
+    <task id="LOCAL-00006" summary="完善推广模块，完成配置管理">
+      <created>1584437388822</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584437388822</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修复了商品列表无法编辑的bug(mybatis中resultMap对应错误)">
+      <created>1584438479915</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584438479915</updated>
+    </task>
+    <task id="LOCAL-00008" summary="完成统计报表">
+      <created>1584533052829</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584533052829</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修复了部分界面搜索字符串为空时无法正常搜索的bug">
+      <created>1584534876325</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1584534876325</updated>
+    </task>
+    <task id="LOCAL-00010" summary="增加了前台输入错误数据时的json解析异常响应">
+      <created>1584536409450</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1584536409450</updated>
+    </task>
+    <task id="LOCAL-00011" summary="完善团购规则对商品id的检查">
+      <created>1584591200140</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1584591200140</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="品牌制造商完善，添加common" />
+    <MESSAGE value="完成订单管理detail" />
+    <MESSAGE value="通用问题完成，及部分关键字功能" />
+    <MESSAGE value="推广管理完成，除团购部分" />
+    <MESSAGE value="完善推广模块，增加自定义异常处理" />
+    <MESSAGE value="完善推广模块，完成配置管理" />
+    <MESSAGE value="修复了商品列表无法编辑的bug(mybatis中resultMap对应错误)" />
+    <MESSAGE value="完成统计报表" />
+    <MESSAGE value="修复了部分界面搜索字符串为空时无法正常搜索的bug" />
+    <MESSAGE value="增加了前台输入错误数据时的json解析异常响应" />
+    <MESSAGE value="完善团购规则对商品id的检查" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善团购规则对商品id的检查" />
+  </component>
+</project>

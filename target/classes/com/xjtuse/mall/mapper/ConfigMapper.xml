@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjtuse.mall.mapper.admin.ConfigMapper">
+
+    <resultMap id="ConfigResultMap" type="com.xjtuse.mall.bean.configs.Config">
+        <result column="id" property="id"/>
+        <result column="key_name" property="keyName"/>
+        <result column="key_value" property="keyValue"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <sql id="Config_List">
+        id, key_name, key_value, add_time, update_time, deleted
+    </sql>
+
+    <select id="queryValue" resultMap="ConfigResultMap">
+        select <include refid="Config_List"/>
+        from litemall_system
+    </select>
+
+    <update id="updateValue">
+        update litemall_system set
+        key_value = #{keyValue},
+        update_time = #{updateTime}
+        where key_name = #{keyName}
+    </update>
+</mapper>

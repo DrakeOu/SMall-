@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xjtuse.mall.mapper.admin.GoodsMapper">
+
+    <!--   商品表////////////////////////////////////-->
+    <resultMap id="BaseResultMap" type="com.xjtuse.mall.bean.goods.Goods">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_sn" property="goodsSn" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <result column="brand_id" property="brandId" jdbcType="INTEGER"/>
+        <result property="gallery" column="Gallery" typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="keywords" property="keywords" jdbcType="VARCHAR"/>
+        <result column="brief" property="brief" jdbcType="VARCHAR"/>
+        <result column="is_on_sale" property="isOnSale" jdbcType="BIT"/>
+        <result column="sort_order" property="sortOrder" jdbcType="SMALLINT"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="share_url" property="shareUrl" jdbcType="VARCHAR"/>
+        <result column="is_new" property="isNew" jdbcType="BIT"/>
+        <result column="is_hot" property="isHot" jdbcType="BIT"/>
+        <result column="unit" property="unit" jdbcType="VARCHAR"/>
+        <result column="counter_price" property="counterPrice" jdbcType="DECIMAL"/>
+        <result column="retail_price" property="retailPrice" jdbcType="DECIMAL"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+        <result column="detail" property="detail" jdbcType="LONGVARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, goods_sn, `name`, category_id, brand_id, gallery, keywords, brief, is_on_sale,
+        sort_order, pic_url, share_url, is_new, is_hot, unit, counter_price, retail_price,
+        add_time, update_time, deleted, detail
+    </sql>
+
+    <select id="queryGoods" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from litemall_goods
+        <where>
+            deleted = 0
+            <if test="goods != null">
+                <if test="goods.goodsSn != null and goods.goodsSn != ''">
+                    and goods_sn like concat('%',concat(#{goods.goodsSn},'%'))
+                </if>
+                <if test="goods.name != null and goods.name != ''">
+                    and `name` like concat('%',concat(#{goods.name},'%'))
+                </if>
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryGoodsCount" resultType="Integer">
+        select count(*) from litemall_goods
+        <where>
+            deleted = 0
+            <if test="goods != null">
+                <if test="goods.goodsSn != null and goods.goodsSn != ''">
+                    and goods_sn like concat('%',concat(#{goods.goodsSn},'%'))
+                </if>
+                <if test="goods.name != null and goods.name != ''">
+                    and `name` like concat('%',concat(#{goods.name},'%' ))
+                </if>
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertGoods">
+        insert into litemall_goods
+        (goods_sn, `name`, category_id, brand_id, gallery, keywords, brief, is_on_sale,
+        sort_order, pic_url, share_url, is_new, is_hot, unit, counter_price, retail_price,
+        add_time, deleted, detail)
+        value
+        (#{goods.goodsSn},#{goods.name},#{goods.categoryId},#{goods.brandId},
+        #{gallery},#{goods.keywords},#{goods.brief},#{goods.isOnSale},#{goods.sortOrder},
+        #{goods.picUrl},#{goods.shareUrl},#{goods.isNew},#{goods.isHot},#{goods.unit},
+        #{goods.counterPrice},#{goods.retailPrice},now(),false,#{goods.detail})
+    </insert>
+
+    <select id="queryMaxId" resultType="Integer">
+        select max(id) from litemall_goods
+    </select>
+
+    <select id="queryGoodsById" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from litemall_goods
+        <where>
+            deleted = 0
+            and id = #{goods.id}
+        </where>
+    </select>
+
+    <update id="updateGoods">
+        update litemall_goods
+        <set>
+            goods_sn = #{goods.goodsSn},
+
+            name = #{goods.name},
+
+            category_id = #{goods.categoryId},
+
+            brand_id = #{goods.brandId},
+
+            gallery = #{gallery},
+
+            keywords = #{goods.keywords},
+
+            brief = #{goods.brief},
+
+            is_on_sale = #{goods.isOnSale},
+
+            sort_order = #{goods.sortOrder},
+
+            pic_url = #{goods.picUrl},
+
+            share_url = #{goods.shareUrl},
+
+            is_new = #{goods.isNew},
+
+            is_hot = #{goods.isHot},
+
+            unit = #{goods.unit},
+
+            counter_price = #{goods.counterPrice},
+
+            retail_price = #{goods.retailPrice},
+
+            update_time = now(),
+
+            detail = #{goods.detail},
+
+        </set>
+        where id = #{goods.id} and deleted = 0
+    </update>
+
+    <update id="setGoodsDeleted">
+        update litemall_goods
+        set deleted = true
+        where  id = #{id}
+    </update>
+
+    <resultMap id="GoodsAttributeMap" type="com.xjtuse.mall.bean.goods.GoodsAttribute">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
+        <result column="attribute" property="attribute" jdbcType="VARCHAR"/>
+        <result column="value" property="value" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+    <sql id="Goods_attribute_List">
+    id, goods_id, attribute, `value`, add_time, update_time
+  </sql>
+
+    <select id="queryGoodsAttributeByConditions" resultMap="GoodsAttributeMap">
+        select
+        <include refid="Goods_attribute_List"/>
+        from litemall_goods_attribute
+        <where>
+            deleted = 0
+            and goods_id = #{goods.id}
+        </where>
+    </select>
+
+    <update id="updateAttribute">
+        update litemall_goods_attribute
+        <set>
+            attribute = #{attribute.attribute},
+
+            `value` = #{attribute.value},
+
+            update_time = now(),
+
+            deleted = 0,
+        </set>
+        where id = #{attribute.id}
+    </update>
+
+    <update id="insertAttribute">
+        insert into litemall_goods_attribute
+        (attribute, goods_id, `value`, add_time, deleted)
+        value
+        (#{attribute.attribute}, #{goodsId}, #{attribute.value}, now(), false )
+    </update>
+
+    <update id="setAttributeDeleted">
+        update litemall_goods_attribute set deleted = true where goods_id = #{goodsId}
+    </update>
+
+    <resultMap id="GoodsCatAndBrandMap" type="com.xjtuse.mall.bean.goods.GoodsCatAndBrand">
+        <id column="id" property="value" jdbcType="INTEGER"/>
+        <result column="name" property="label" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <resultMap id="GoodsParentCategoryMap" type="com.xjtuse.mall.bean.goods.ParentCategory">
+        <id column="id" property="value" jdbcType="INTEGER"/>
+        <result column="name" property="label" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <select id="queryBrandForGoods" resultMap="GoodsCatAndBrandMap">
+        select id,`name`
+        from litemall_brand
+        where deleted = 0
+    </select>
+
+    <select id="queryL1CategoryForGoods" resultMap="GoodsParentCategoryMap">
+        select id,`name`
+        from litemall_category
+        where `level` = 'L1' and deleted = 0
+    </select>
+
+    <select id="queryL1CatByCid" resultType="Integer">
+        select pid from litemall_category where id = #{id}
+    </select>
+
+    <select id="queryL2CategoryForGoods" resultMap="GoodsCatAndBrandMap">
+        select id,`name`
+        from litemall_category
+        where `level` = 'L2' and deleted = 0 and pid = #{parentCategory.value}
+    </select>
+
+    <resultMap id="GoodsProducttMap" type="com.xjtuse.mall.bean.goods.GoodsProduct">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
+        <result column="specifications" property="specifications"
+                typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="number" property="number" jdbcType="INTEGER"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+    <sql id="Goods_Product_List">
+    id, goods_id, specifications, price, `number`, url, add_time, update_time
+    </sql>
+
+    <select id="queryProductsById" resultMap="GoodsProducttMap">
+        select
+        <include refid="Goods_Product_List"/>
+        from litemall_goods_product
+        where deleted = 0
+        and goods_id = #{goods.id}
+    </select>
+
+    <update id="setProductDeleted">
+        update litemall_goods_product set deleted = true where goods_id = #{goodsId}
+    </update>
+
+    <update id="updateProducts">
+        update litemall_goods_product
+        <set>
+            goods_id = #{product.goodsId},
+
+            specifications = #{specifications},
+
+            price = #{product.price},
+
+            number = #{product.number},
+
+            url = #{product.url},
+
+            update_time = now(),
+
+            deleted = false
+        </set>
+        where id = #{product.id}
+    </update>
+
+    <insert id="insertProduct">
+        insert into litemall_goods_product
+        (goods_id, specifications, price, `number`, url, add_time, deleted)
+        values
+        (#{goodsId}, #{specifications}, #{product.price}, #{product.number}, #{product.url}, now(), false)
+    </insert>
+
+    <resultMap id="GoodsSpecificationMap" type="com.xjtuse.mall.bean.goods.GoodsSpecification">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
+        <result column="specification" property="specification" jdbcType="VARCHAR"/>
+        <result column="value" property="value" jdbcType="VARCHAR"/>
+        <result column="pic_url" property="picUrl" jdbcType="VARCHAR"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Goods_Specification_List">
+    id, goods_id, specification, value, pic_url, add_time, update_time
+    </sql>
+
+    <select id="queryGoodsSpecificationsById" resultMap="GoodsSpecificationMap">
+        select
+        <include refid="Goods_Specification_List"/>
+        from litemall_goods_specification
+        where deleted = 0
+        and goods_id = #{goods.id}
+    </select>
+
+    <update id="setSpecificationsDeleted">
+        update litemall_goods_specification
+        set deleted = true
+        where goods_id = #{goodsId}
+    </update>
+
+    <update id="updateSpecification">
+        update litemall_goods_specification
+        <set>
+            specification = #{specification.specification},
+
+            `value` = #{specification.value},
+
+            pic_url = #{specification.picUrl},
+
+            update_time = now(),
+
+            deleted = false ,
+        </set>
+        where goods_id = #{specification.goodsId}
+    </update>
+
+    <insert id="insertSpecification">
+        insert into litemall_goods_specification
+        (goods_id, specification, `value`, pic_url,  update_time)
+        values
+        (#{goodsId}, #{specification.specification}, #{specification.value}, #{specification.picUrl}, now())
+    </insert>
+
+
+    <resultMap id="BaseCommentMap" type="com.xjtuse.mall.bean.goods.Comment">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="value_id" property="valueId" jdbcType="INTEGER"/>
+        <result column="type" property="type" jdbcType="TINYINT"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="has_picture" property="hasPicture" jdbcType="BIT"/>
+        <result column="pic_urls" property="picUrls" typeHandler="com.xjtuse.mall.datahandler.String2StringArray"/>
+        <result column="star" property="star" jdbcType="SMALLINT"/>
+        <result column="add_time" property="addTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="deleted" property="deleted" jdbcType="BIT"/>
+    </resultMap>
+
+    <sql id="Base_Comment_List">
+        id, value_id, type, content, user_id, has_picture, pic_urls, star, add_time, update_time
+    </sql>
+
+    <select id="queryCommentList" resultMap="BaseCommentMap">
+        select
+        <include refid="Base_Comment_List"/>
+        from litemall_comment
+        <where>
+            deleted = false
+            <if test="comment.userId != null">
+                and user_id like concat('%',concat(#{comment.userId},'%'))
+            </if>
+            <if test="comment.valueId != null">
+                and value_id like concat('%',concat(#{comment.valueId},'%'))
+            </if>
+        </where>
+        order by #{pageUtil.sort} #{pageUtil.order} limit #{pageUtil.start},#{pageUtil.limit}
+    </select>
+
+    <select id="queryCommentTotal" resultType="Integer">
+        select count(*) from cskaoyan_mall_comment
+        <where>
+            deleted = false
+            <if test="comment.userId != null">
+                and user_id like concat('%',concat(#{comment.userId},'%'))
+            </if>
+            <if test="comment.valueId != null">
+                and value_id like concat('%',concat(#{comment.valueId},'%'))
+            </if>
+        </where>
+    </select>
+
+    <update id="setCommentDeleted">
+        update litemall_comment
+        set deleted = true
+        <where>
+            id = #{comment.id}
+        </where>
+    </update>
+
+
+
+</mapper>
+
+
