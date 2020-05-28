@@ -19,7 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/wx")
@@ -137,26 +139,25 @@ public class WxGoodsController {
         return ResultUtil.genFailResult("查询的品牌不存在!");
     }
 
-    @RequestMapping("/catalog/index")
-    public TResultVo catalogIndex(Integer id){
-        //查询l1级目录
-        List<Category> categoryList = goodsService.queryL1();
-        //获取当前l1cata
-        Category currentCategory = null;
-        //刚打开这个页面，默认显示第一个，之后打开什么cate显示什么
-        if(id != null){
-            currentCategory = goodsService.findCateById(id);
+    @RequestMapping("/goods/category")
+    public TResultVo goodsCategory(Integer id){
+        //查询当前cate
+        Category cur = goodsService.findCateById(id);
+        Category parent = null;
+        List<Category> children = null;
+
+        if(cur.getPid()==0){
+            parent = cur;
+            children = goodsService.queryCateByPid(cur.getId());
         }else{
-            currentCategory = categoryList.get(0);
+            parent = goodsService.findCateById(cur.getPid());
+            children = goodsService.queryCateByPid(parent.getId());
         }
-        //查询该目录下的子目录
-        List<Category> subCategoryList = goodsService.queryCateByPid(currentCategory.getId());
+        Map<String, Object> data = new HashMap<>();
+        data.put("currentCategory", cur);
+        data.put("parentCategory", parent);
+        data.put("brotherCategory", children);
 
-        return ResultUtil.genSuccessResult(VoUtil.genCategoryVo(
-                categoryList,
-                currentCategory,
-                subCategoryList
-        ));
+        return ResultUtil.genSuccessResult(data);
     }
-
 }

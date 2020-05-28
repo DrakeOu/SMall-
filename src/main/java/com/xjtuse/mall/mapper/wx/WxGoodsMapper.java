@@ -46,6 +46,10 @@ public interface WxGoodsMapper {
 
     List<Category> queryCateByPid(Integer id);
 
+    Goods queryGoodsById(Integer goodsId);
+
+    boolean isOnSale(Goods goods);
+
 
     /**
      * 此mapper及对应service 控制如下 表数据

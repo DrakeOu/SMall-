@@ -2,6 +2,7 @@ package com.xjtuse.mall.mapper.wx;
 
 import com.xjtuse.mall.bean.goods.Goods;
 import com.xjtuse.mall.bean.promotion.Coupon;
+import com.xjtuse.mall.bean.user.Cart;
 
 import java.util.List;
 
@@ -9,6 +10,10 @@ public interface WxUserMapper {
     List<Coupon> queryAllCoupon();
 
     Integer queryCollectCount(Goods goods);
+
+    List<Cart> queryCartById(Integer userId);
+
+    void deleteCartById(Cart cart);
 
     /**
      * 此mapper负责控制如下 表数据

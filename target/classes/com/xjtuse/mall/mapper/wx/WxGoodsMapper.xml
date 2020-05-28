@@ -142,24 +142,25 @@
     <select id="countGoods" resultType="int">
         select count(*)
         from litemall_goods
+        where  deleted = 0
     </select>
 
     <select id="querySpecificationById" resultMap="GoodsSpecificationMap">
         select id, goods_id, specification, value, pic_url, add_time, update_time, deleted
         from litemall_goods_specification
-        where goods_id = #{id}
+        where deleted = 0 and  goods_id = #{id}
     </select>
 
     <select id="queryProductByGoods" resultMap="GoodsProducttMap">
         select id, goods_id, specifications, price, number, url, add_time, update_time, deleted
         from litemall_goods_product
-        where goods_id = #{id}
+        where deleted = 0 and  goods_id = #{id}
     </select>
 
     <select id="queryAttribute" resultMap="GoodsAttributeMap">
         select id, goods_id, attribute, value, add_time, update_time, deleted
         from litemall_goods_attribute
-        where goods_id = #{id}
+        where deleted = 0 and  goods_id = #{id}
     </select>
 
     <select id="queryCate" resultMap="GoodsMap">
@@ -171,17 +172,19 @@
     <select id="queryCountCate" resultType="int">
         select count(*)
         from litemall_goods
-        where category_id = #{categoryId}
+        where deleted = 0 and  category_id = #{categoryId}
     </select>
 
     <select id="queryCountGoods" resultType="int">
         select count(*)
         from litemall_goods
+        where  deleted = 0
     </select>
 
     <select id="queryBrandCount" resultType="int">
         select count(*)
         from litemall_brand
+        where  deleted = 0
     </select>
 
     <select id="queryBrandList" resultMap="BrandMap">
@@ -196,18 +199,30 @@
     <select id="queryL1" resultMap="CategoryMap">
         select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
         from litemall_category
-        where pid = 0
+        where deleted = 0 and  pid = 0
     </select>
 
     <select id="findCateById" resultMap="CategoryMap">
         select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
         from litemall_category
-        where id = #{id}
+        where deleted = 0 and  id = #{id}
     </select>
 
     <select id="queryCateByPid" resultMap="CategoryMap">
         select id, name, keywords, `desc`, pid, icon_url, pic_url, level, sort_order, add_time, update_time, deleted
         from litemall_category
-        where pid = #{id}
+        where deleted = 0 and  pid = #{id}
+    </select>
+
+    <select id="queryGoodsById" resultMap="GoodsMap">
+        select id, goods_sn, name, category_id, brand_id, gallery, keywords, brief, is_on_sale, sort_order, pic_url, share_url, is_new, is_hot, unit, counter_price, retail_price, detail, add_time, update_time, deleted
+        from litemall_goods
+        where deleted = 0 and goods_sn = #{goodsId}
+    </select>
+
+    <select id="isOnSale" resultType="boolean">
+        select is_on_sale
+        from litemall_goods
+        where deleted = 0 and id = #{id}
     </select>
 </mapper>

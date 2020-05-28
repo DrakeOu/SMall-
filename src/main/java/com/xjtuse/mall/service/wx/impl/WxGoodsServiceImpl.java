@@ -108,4 +108,14 @@ public class WxGoodsServiceImpl implements WxGoodsService {
         return goodsMapper.queryCateByPid(id);
     }
 
+    @Override
+    public Goods queryGoodsById(Integer goodsId) {
+        return goodsMapper.queryGoodsById(goodsId);
+    }
+
+    @Override
+    public boolean isOnSale(Goods goods) {
+        return goodsMapper.isOnSale(goods);
+    }
+
 }

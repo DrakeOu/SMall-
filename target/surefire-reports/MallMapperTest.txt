@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: MallMapperTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 27.896 s <<< FAILURE! - in MallMapperTest
+createCategoryTest  Time elapsed: 1.411 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.createCategory
+	at MallMapperTest.createCategoryTest(MallMapperTest.java:39)
+
+updateCategoryTest  Time elapsed: 0.025 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.updateCategory
+	at MallMapperTest.updateCategoryTest(MallMapperTest.java:55)
+
+queryOrderTest  Time elapsed: 0.008 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.queryOrder
+	at MallMapperTest.queryOrderTest(MallMapperTest.java:71)
+
+queryIssueTest  Time elapsed: 0.034 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.queryIssue
+	at MallMapperTest.queryIssueTest(MallMapperTest.java:102)
+
+updateBrandTest  Time elapsed: 0.005 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.updateBrandInfo
+	at MallMapperTest.updateBrandTest(MallMapperTest.java:25)
+
+OrderGoodsTest  Time elapsed: 0.005 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.queryOAGByOrderId
+	at MallMapperTest.OrderGoodsTest(MallMapperTest.java:82)
+
+queryUserTest  Time elapsed: 0.009 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.queryUserById
+	at MallMapperTest.queryUserTest(MallMapperTest.java:90)
+

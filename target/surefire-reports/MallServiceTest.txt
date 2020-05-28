@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: MallServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.052 s <<< FAILURE! - in MallServiceTest
+updateBrandTest  Time elapsed: 0 s  <<< ERROR!
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.xjtuse.mall.mapper.admin.MallMapper.updateBrandInfo
+	at MallServiceTest.updateBrandTest(MallServiceTest.java:22)
+

@@ -41,10 +41,13 @@ public class TokenService {
         }
         //缓存token
         redisService.setExpire(tokenCode, token, EXPIRE_SECOND);
-        return tokenCode+"="+token;
+        return tokenCode+"="+token+"="+user.getId();
     }
 
     public boolean checkToken(String token){
+        if(token==null || token==""){
+            return false;
+        }
         //计算用户的token key token
         String tokenCode = splitTokenCode(token);
         String realToken = splitToken(token);
@@ -65,17 +68,30 @@ public class TokenService {
         redisService.del(tokenCode);
     }
 
+    public Integer getUserId(String token){
+        String s = splitUserId(token);
+        if(s!=null) return -1;
+        return Integer.valueOf(s);
+    }
+
     private String splitTokenCode(String token){
         String[] strings = token.split("=");
-        if(strings.length == 2)
+        if(strings.length == 3)
             return strings[0];
         return null;
     }
 
     private String splitToken(String token){
         String[] strings = token.split("=");
-        if(strings.length == 2)
+        if(strings.length == 3)
             return strings[1];
+        return null;
+    }
+
+    private String splitUserId(String token){
+        String[] strings = token.split("=");
+        if(strings.length == 3)
+            return strings[2];
         return null;
     }
 

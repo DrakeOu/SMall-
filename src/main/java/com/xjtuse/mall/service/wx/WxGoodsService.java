@@ -44,4 +44,8 @@ public interface WxGoodsService {
     Category findCateById(Integer id);
 
     List<Category> queryCateByPid(Integer id);
+
+    Goods queryGoodsById(Integer goodsId);
+
+    boolean isOnSale(Goods goods);
 }
