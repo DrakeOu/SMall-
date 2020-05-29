@@ -45,7 +45,7 @@ public class TokenService {
     }
 
     public boolean checkToken(String token){
-        if(token==null || token==""){
+        if(token==null || "".equals(token)){
             return false;
         }
         //计算用户的token key token

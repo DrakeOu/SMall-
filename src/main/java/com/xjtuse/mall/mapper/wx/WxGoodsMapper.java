@@ -50,6 +50,8 @@ public interface WxGoodsMapper {
 
     boolean isOnSale(Goods goods);
 
+    GoodsProduct queryProductByPid(Integer productId);
+
 
     /**
      * 此mapper及对应service 控制如下 表数据

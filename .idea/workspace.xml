@@ -2,74 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f32ea06-c3e1-4810-8e99-2926139b60ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/0092393bb30a4745914cc4b33a6f686a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/05dd464caf5d4785848e17394913dd14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/0a8107167dbd4cfc91dae993f10204ab.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/0cf8a7699cc7413b8b05caf51653ee51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/15ab6f8ce95d46398c59599d09c770a9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/1952aab3db454ce8a08fc3430e2248df.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/27dd89a288e94ab095787d5078f440be.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/2ac1908508b9467eb8c4cb9522074c1d.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/388ef5928caf40b094f2b0e1d3c52108.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/3d3abf4035354ac09933bd85df6f25ec.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/55d321049a544030afda8a3c10858b8e.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/579c514b790448109140157d96489267.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/59ed3de2484d424ba8fc5d21dd08be14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/64bece3d2c014c97b06f6cfdb217b269.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/7e94907a585a48cf9511c4be207c9548.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/80b71e92530e43fc9f863eafccc74b23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/81acff0382ab4dfe9e1d4c025ceda67f.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/9d42c526e42a4a45a9267cfbf49b4497.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/a50ada258e80446a91988ea15f32be86.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/a6d04806208f4541a4333275a39a19df.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/a7a622b0230640ae871b7e822891f234.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/b0784956466447c0b2c717303636879d.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/b0867a7a20f143e29a3d1cf8437c9ab7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/b6e09dc18e88482daf05b6ac39a36de1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/c508a7a824bf4a3aa7bde5ea8fa2163a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/cb63b7a5e9ea4d27afaee2b71f51d0b7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/d14998ba886d411f83becf43d11cb6b7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/db7eca8fbc3f44dd958c1a09685672c5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/dc6beb390ad847e9a0cdcb39f403de5b.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/e03ad0c9d5b64d85becddba979037bb5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/e38757042cde44af93fc94de11949366.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/f2403927b9044b5f940835b914b2dae0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/f5622433a59c4d9a87fec3a658438aa8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/small/src/main/resources/static/f8015090ea994c36ac099d816ca15d89.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/CouponAndUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/CouponAndUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/config/ShiroConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxGoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxGoodsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxGoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxGoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxUserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxGoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/shiro/CustomRealm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/shiro/MyAuthenticationFilter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/token/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/token/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/ResultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/ResultUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MallMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MallServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StatMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UnamedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/CouponAndUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/CouponAndUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/config/ShiroConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxCartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxGoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxGoodsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxGoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOrderService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxUserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/shiro/CustomRealm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/shiro/MyAuthenticationFilter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/token/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/token/TokenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BaseTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MallMapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MallServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StatMapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/UnamedTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/utils/ResultUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/utils/ResultUtil.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +80,14 @@
         <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="litemall: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="litemall_cart: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="litemall_coupon_user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="litemall: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="litemall_order: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -119,6 +97,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -145,7 +124,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -253,17 +232,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f4496996" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f4496996" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6d356ce3" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -306,6 +275,7 @@
       <workItem from="1590491715149" duration="4085000" />
       <workItem from="1590632384867" duration="21599000" />
       <workItem from="1590666523634" duration="8749000" />
+      <workItem from="1590719770195" duration="26903000" />
     </task>
     <task id="LOCAL-00001" summary="品牌制造商完善，添加common">
       <created>1584196542530</created>
@@ -419,16 +389,5 @@
     <MESSAGE value="增加了前台输入错误数据时的json解析异常响应" />
     <MESSAGE value="完善团购规则对商品id的检查" />
     <option name="LAST_COMMIT_MESSAGE" value="完善团购规则对商品id的检查" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

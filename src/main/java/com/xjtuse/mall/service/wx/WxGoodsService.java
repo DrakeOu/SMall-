@@ -48,4 +48,6 @@ public interface WxGoodsService {
     Goods queryGoodsById(Integer goodsId);
 
     boolean isOnSale(Goods goods);
+
+    GoodsProduct queryProductByPid(Integer productId);
 }

@@ -1,5 +1,6 @@
 package com.xjtuse.mall.bean.promotion;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class CouponAndUser {
@@ -7,12 +8,12 @@ public class CouponAndUser {
     private Integer userId;
     private Integer couponId;
     private Integer status;
-    private Date usedTime;
-    private Date startTime;
-    private Date endTime;
+    private LocalDateTime usedTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private Integer orderId;
-    private Date addTime;
-    private Date updateTime;
+    private LocalDateTime addTime;
+    private LocalDateTime updateTime;
     private Boolean deleted;
 
     @Override
@@ -33,20 +34,6 @@ public class CouponAndUser {
     }
 
     public CouponAndUser() {
-    }
-
-    public CouponAndUser(Integer id, Integer userId, Integer couponId, Integer status, Date usedTime, Date startTime, Date endTime, Integer orderId, Date addTime, Date updateTime, Boolean deleted) {
-        this.id = id;
-        this.userId = userId;
-        this.couponId = couponId;
-        this.status = status;
-        this.usedTime = usedTime;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.orderId = orderId;
-        this.addTime = addTime;
-        this.updateTime = updateTime;
-        this.deleted = deleted;
     }
 
     public Integer getId() {
@@ -81,27 +68,27 @@ public class CouponAndUser {
         this.status = status;
     }
 
-    public Date getUsedTime() {
+    public LocalDateTime getUsedTime() {
         return usedTime;
     }
 
-    public void setUsedTime(Date usedTime) {
+    public void setUsedTime(LocalDateTime usedTime) {
         this.usedTime = usedTime;
     }
 
-    public Date getStartTime() {
+    public LocalDateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 
@@ -113,19 +100,19 @@ public class CouponAndUser {
         this.orderId = orderId;
     }
 
-    public Date getAddTime() {
+    public LocalDateTime getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Date addTime) {
+    public void setAddTime(LocalDateTime addTime) {
         this.addTime = addTime;
     }
 
-    public Date getUpdateTime() {
+    public LocalDateTime getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
     }
 

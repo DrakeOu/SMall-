@@ -97,4 +97,8 @@ public class ResultUtil {
         }
         return resultVo;
     }
+
+    public static TResultVo unlogin(){
+        return genFailResult("请登录", 501);
+    }
 }

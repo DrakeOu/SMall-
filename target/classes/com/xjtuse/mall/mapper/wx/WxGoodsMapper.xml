@@ -33,7 +33,7 @@
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
         <result column="deleted" property="deleted" jdbcType="BIT"/>
     </resultMap>
-    <resultMap id="GoodsProducttMap" type="com.xjtuse.mall.bean.goods.GoodsProduct">
+    <resultMap id="GoodsProductMap" type="com.xjtuse.mall.bean.goods.GoodsProduct">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="goods_id" property="goodsId" jdbcType="INTEGER"/>
         <result column="specifications" property="specifications"
@@ -151,7 +151,7 @@
         where deleted = 0 and  goods_id = #{id}
     </select>
 
-    <select id="queryProductByGoods" resultMap="GoodsProducttMap">
+    <select id="queryProductByGoods" resultMap="GoodsProductMap">
         select id, goods_id, specifications, price, number, url, add_time, update_time, deleted
         from litemall_goods_product
         where deleted = 0 and  goods_id = #{id}
@@ -224,5 +224,11 @@
         select is_on_sale
         from litemall_goods
         where deleted = 0 and id = #{id}
+    </select>
+
+    <select id="queryProductByPid" resultMap="GoodsProductMap">
+        select id, goods_id, specifications, price, number, url, add_time, update_time, deleted
+        from litemall_goods_product
+        where deleted = 0 and id = #{productId}
     </select>
 </mapper>

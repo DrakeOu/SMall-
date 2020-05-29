@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface WxOrderService {
     List<Groupon> queryTwoGroupon();
+
+    Object orderInfo(Integer userId);
 }
