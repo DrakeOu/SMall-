@@ -69,9 +69,9 @@ public class TokenService {
     }
 
     public Integer getUserId(String token){
-        String s = splitUserId(token);
-        if(s!=null) return -1;
-        return Integer.valueOf(s);
+        String s = null;
+        s = splitUserId(token);
+        return s==null?null:Integer.valueOf(s);
     }
 
     private String splitTokenCode(String token){

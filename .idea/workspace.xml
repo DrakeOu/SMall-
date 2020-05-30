@@ -3,44 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="6f32ea06-c3e1-4810-8e99-2926139b60ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/CouponAndUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/CouponAndUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/config/ShiroConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxGoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxGoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxGoodsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/shiro/CustomRealm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/shiro/MyAuthenticationFilter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/token/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/token/TokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/ResultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/ResultUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/CouponAndUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/CouponAndUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/config/ShiroConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxCartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxGoodsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOrderService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/shiro/CustomRealm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/shiro/MyAuthenticationFilter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/token/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/token/TokenService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/utils/ResultUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/utils/ResultUtil.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +45,15 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -80,14 +72,7 @@
         <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="litemall: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="litemall_coupon_user: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="litemall@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="litemall: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="litemall_order: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="litemall_address: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -129,6 +114,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -276,6 +262,7 @@
       <workItem from="1590632384867" duration="21599000" />
       <workItem from="1590666523634" duration="8749000" />
       <workItem from="1590719770195" duration="26903000" />
+      <workItem from="1590815739013" duration="24794000" />
     </task>
     <task id="LOCAL-00001" summary="品牌制造商完善，添加common">
       <created>1584196542530</created>

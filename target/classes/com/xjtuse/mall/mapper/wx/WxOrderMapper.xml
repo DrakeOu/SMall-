@@ -72,4 +72,11 @@
         where deleted = 0
         and user_id = #{userId}
     </select>
+
+    <select id="queryGrouponRulesById" resultMap="GrouponRulesMap">
+        select id, goods_id, goods_name, pic_url, discount, discount_member, expire_time, status, add_time, update_time, deleted
+        from litemall_groupon_rules
+        where deleted = 0
+        and id = #{grouponRulesId}
+    </select>
 </mapper>

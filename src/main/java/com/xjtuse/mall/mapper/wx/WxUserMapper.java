@@ -3,11 +3,14 @@ package com.xjtuse.mall.mapper.wx;
 import com.xjtuse.mall.bean.goods.Goods;
 import com.xjtuse.mall.bean.promotion.Coupon;
 import com.xjtuse.mall.bean.promotion.CouponAndUser;
+import com.xjtuse.mall.bean.user.Address;
 import com.xjtuse.mall.bean.user.Cart;
 import com.xjtuse.mall.bean.user.Collect;
+import com.xjtuse.mall.bean.user.LitemallAddress;
 import com.xjtuse.mall.utils.PageUtil;
 import org.apache.ibatis.annotations.Param;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface WxUserMapper {
@@ -42,6 +45,36 @@ public interface WxUserMapper {
     void addCollect(Collect newCollect);
 
     List<Collect> queryCollectList(Integer userId, PageUtil pageUtil, Integer type);
+
+    void deleteCartByPro(@Param("productId") Integer productId, @Param("userId") Integer userId);
+
+    LitemallAddress findDefaultAddress(Integer userId);
+
+    LitemallAddress queryAddress(@Param("userId") Integer userId, @Param("addressId") Integer addressId);
+
+    List<Cart> queryCartByUidAndChecked(Integer userId);
+
+    Cart queryCartByCid(@Param("userId") Integer userId, @Param("cartId") Integer cartId);
+
+    List<CouponAndUser> queryAllCouponAndUser(Integer userId);
+
+    CouponAndUser queryCouponAndUserById(Integer userCouponId);
+
+    List<Coupon> queryCouponList(PageUtil pageUtil);
+
+    List<CouponAndUser> queryCouponAndUserList(Integer userId, Short status, PageUtil pageUtil);
+
+    Coupon queryCouponByCode(String code);
+
+    List<LitemallAddress> queryAddressListByUid(Integer userId);
+
+    void resetDefaultAddress(Integer userId);
+
+    void addAddress(LitemallAddress address);
+
+    void updateAddress(LitemallAddress address);
+
+    void deleteAddressById(Integer id);
 
     /**
      * 此mapper负责控制如下 表数据

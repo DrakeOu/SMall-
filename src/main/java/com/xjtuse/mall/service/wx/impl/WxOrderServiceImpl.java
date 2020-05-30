@@ -2,6 +2,7 @@ package com.xjtuse.mall.service.wx.impl;
 
 import com.xjtuse.mall.bean.mall.Order;
 import com.xjtuse.mall.bean.promotion.Groupon;
+import com.xjtuse.mall.bean.promotion.GrouponRules;
 import com.xjtuse.mall.mapper.wx.WxOrderMapper;
 import com.xjtuse.mall.service.wx.WxOrderService;
 import com.xjtuse.mall.utils.OrderUtil;
@@ -49,5 +50,10 @@ public class WxOrderServiceImpl implements WxOrderService {
         orderInfo.put("unrecv", unrecv);
         orderInfo.put("uncomment", uncomment);
         return orderInfo;
+    }
+
+    @Override
+    public GrouponRules queryGrouponRulesById(Integer grouponRulesId) {
+        return orderMapper.queryGrouponRulesById(grouponRulesId);
     }
 }
