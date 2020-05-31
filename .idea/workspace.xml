@@ -3,61 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6f32ea06-c3e1-4810-8e99-2926139b60ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/SmallApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/SmallApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/mall/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/mall/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/Groupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/Groupon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/GrouponRules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/bean/promotion/GrouponRules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxAdressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxAdressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/controller/wx/WxOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxGoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxGoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOtherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxOtherMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/mapper/wx/WxUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxGoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOtherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxOtherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/WxUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOtherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxOtherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/OrderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xjtuse/mall/utils/OrderUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/ConfigMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/ConfigMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/GoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/MallMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/MallMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/PromotionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/PromotionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/StatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/StatMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/SystemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/SystemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/admin/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOtherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxOtherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/SmallApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/SmallApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/mall/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/mall/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/Groupon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/Groupon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/GrouponRules.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/bean/promotion/GrouponRules.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxAdressController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxAdressController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/controller/wx/WxOrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxGoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOrderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOtherMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOtherMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOtherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxOtherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/mapper/wx/WxUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxGoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxGoodsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOtherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxOtherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/WxUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxGoodsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOtherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxOtherServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/service/wx/impl/WxUserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/utils/OrderUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/xjtuse/mall/utils/OrderUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/small-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/small-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/small-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/small-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -152,20 +97,21 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\java-\small\small\src\main\resources\com\xjtuse\mall\mapper\admin" />
+      <recent name="E:\code\java-\small\small\src\main\resources\static\img" />
+      <recent name="E:\code\java-\small\small\src\test\java" />
+      <recent name="E:\code\java-\small\small\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xjtuse.mall.utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\code\java-\small\small\front" />
       <recent name="E:\code\java-\small\small\src\main\java\com\xjtuse\mall" />
       <recent name="E:\code\java-\small\small\src\main\resources\static" />
       <recent name="E:\code\java-\small\small\src\main\resources\static\img" />
       <recent name="E:\code\java-\small\small\src\test" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.xjtuse.mall.utils" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\code\java-\small\small\src\main\resources\static\img" />
-      <recent name="E:\code\java-\small\small\src\test\java" />
-      <recent name="E:\code\java-\small\small\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -298,7 +244,7 @@
       <workItem from="1590719770195" duration="26903000" />
       <workItem from="1590815739013" duration="24794000" />
       <workItem from="1590893025098" duration="23234000" />
-      <workItem from="1590917593178" duration="2848000" />
+      <workItem from="1590917593178" duration="3585000" />
     </task>
     <task id="LOCAL-00001" summary="品牌制造商完善，添加common">
       <created>1584196542530</created>
