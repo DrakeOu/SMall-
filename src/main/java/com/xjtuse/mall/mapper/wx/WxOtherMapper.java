@@ -19,6 +19,8 @@ public interface WxOtherMapper {
 
     Integer queryTopicCount();
 
+    List<Issue> queryIssueList(String question, PageUtil pageUtil);
+
     /**
      * 此mapper及对应service控制 如下表数据
      * ad

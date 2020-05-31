@@ -13,6 +13,8 @@
         <result column="update_time" property="updateTime"/>
         <result column="share_url" property="shareUrl"/>
         <result column="payed" property="payed"/>
+        <result column="status" property="status"/>
+        <result column="creator_user_time" property="creatorUserTime"/>
         <result column="deleted" property="deleted"/>
     </resultMap>
 
@@ -27,6 +29,7 @@
         <result column="add_time" property="addTime"/>
         <result column="update_time" property="updateTime"/>
         <result column="expire_time" property="expireTime"/>
+        <result column="status" property="status"/>
         <result column="deleted" property="deleted"/>
     </resultMap>
 
@@ -36,6 +39,7 @@
         <result column="user_id" property="userId"/>
         <result column="order_sn" property="orderSn"/>
         <result column="order_status" property="orderStatus"/>
+        <result column="aftersale_status" property="aftersaleStatus"/>
         <result column="consignee" property="consignee"/>
         <result column="mobile" property="mobile"/>
         <result column="address" property="address"/>
@@ -52,6 +56,10 @@
         <result column="ship_sn" property="shipSn"/>
         <result column="ship_channel" property="shipChannel"/>
         <result column="ship_time" property="shipTime"/>
+        <result column="refund_amount" property="refundAmount"/>
+        <result column="refund_type" property="refundType"/>
+        <result column="refund_content" property="refundContent"/>
+        <result column="refund_time" property="refundTime"/>
         <result column="confirm_time" property="confirmTime"/>
         <result column="comments" property="comments"/>
         <result column="end_time" property="endTime"/>
@@ -79,4 +87,97 @@
         where deleted = 0
         and id = #{grouponRulesId}
     </select>
+
+    <select id="queryOrderById" resultMap="OrderMap">
+        select id, user_id, order_sn, order_status, aftersale_status, consignee, mobile, address, message, goods_price, freight_price, coupon_price, integral_price, groupon_price, order_price, actual_price, pay_id, pay_time, ship_sn, ship_channel, ship_time, refund_amount, refund_type, refund_content, refund_time, confirm_time, comments, end_time, add_time, update_time, deleted
+        from litemall_order
+        where deleted = 0
+          and user_id = #{userId}
+        and id = #{orderId}
+    </select>
+
+    <select id="countGroupon" resultType="int">
+        select count(*)
+        from litemall_groupon
+        where deleted = 0
+        and groupon_id = #{grouponLinkId}
+    </select>
+
+    <select id="hasJoinGroupon" resultType="int">
+        select count(*)
+        from litemall_groupon
+        where deleted = 0
+        and user_id = #{userId}
+        and groupon_id = #{grouponLinkId}
+    </select>
+
+    <select id="queryGrouponById" resultMap="GrouponMap">
+        select id, order_id, groupon_id, rules_id, user_id, share_url, creator_user_id, creator_user_time, status, add_time, update_time, deleted
+        from litemall_groupon
+        where deleted = 0
+          and user_id = #{userId}
+          and groupon_id = #{grouponLinkId}
+    </select>
+
+    <insert id="addOrder">
+        insert into litemall_order
+        (user_id, order_sn, order_status, consignee, mobile, address, message, goods_price, freight_price, coupon_price, integral_price, groupon_price, order_price, actual_price, end_time, add_time, update_time)
+        VALUES
+        (#{userId}, #{orderSn}, #{orderStatus}, #{consignee}, #{mobile}, #{address}, #{message}, #{goodsPrice}, #{freightPrice}, #{couponPrice}, #{integralPrice}, #{grouponPrice}, #{orderPrice}, #{actualPrice}, #{endTime}, now(), now())
+    </insert>
+
+    <insert id="createGroupon">
+        insert into litemall_groupon
+        (order_id, groupon_id, rules_id, user_id, share_url, creator_user_id, creator_user_time, status, add_time, update_time)
+        VALUES
+        (#{orderId}, #{grouponId}, #{rulesId}, #{userId}, #{shareUrl}, #{creatorUserId}, #{creatorUserTime}, #{status}, now(), now())
+    </insert>
+
+    <update id="updateOrder">
+        update litemall_order set
+        order_sn = #{orderSn},
+        order_status = #{orderStatus},
+        update_time = #{updateTime}
+        where id = #{id}
+    </update>
+
+    <update id="deleteOrderById">
+        update litemall_order set
+        deleted = 1
+        where id = #{orderId}
+    </update>
+
+    <update id="deleteAftersaleByOrderId">
+        update litemall_aftersale set
+        deleted = 1
+        where user_id = #{userId} and order_id = #{orderId}
+    </update>
+
+    <select id="queryOrderByOsn" resultMap="OrderMap">
+        select id, user_id, order_sn, order_status, aftersale_status, consignee, mobile, address, message, goods_price, freight_price, coupon_price, integral_price, groupon_price, order_price, actual_price, pay_id, pay_time, ship_sn, ship_channel, ship_time, refund_amount, refund_type, refund_content, refund_time, confirm_time, comments, end_time, add_time, update_time, deleted
+        from litemall_order
+        where order_sn = #{orderSn} and deleted = 0
+    </select>
+
+    <select id="queryByOrderStatus" resultMap="OrderMap">
+        select id, user_id, order_sn, order_status, aftersale_status, consignee, mobile, address, message, goods_price, freight_price, coupon_price, integral_price, groupon_price, order_price, actual_price, pay_id, pay_time, ship_sn, ship_channel, ship_time, refund_amount, refund_type, refund_content, refund_time, confirm_time, comments, end_time, add_time, update_time, deleted
+        from litemall_order
+        where deleted = 0
+        and user_id = #{userId}
+        and order_status = #{status}
+        <if test="pageUtil != null and pageUtil.sort != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+        </if>
+        <if test="pageUtil != null and pageUtil.start != null">
+            limit #{pageUtil.start},#{pageUtil.limit}
+        </if>
+    </select>
+
+    <select id="queryGrouponByOrderId" resultMap="GrouponMap">
+        select id, order_id, groupon_id, rules_id, user_id, share_url, creator_user_id, creator_user_time, status, add_time, update_time, deleted
+        from litemall_groupon
+        where deleted = 0
+        and order_id = #{id}
+    </select>
+
 </mapper>

@@ -1,12 +1,10 @@
 package com.xjtuse.mall.service.wx.impl;
 
+import com.xjtuse.mall.bean.goods.Comment;
 import com.xjtuse.mall.bean.goods.Goods;
 import com.xjtuse.mall.bean.promotion.Coupon;
 import com.xjtuse.mall.bean.promotion.CouponAndUser;
-import com.xjtuse.mall.bean.user.Address;
-import com.xjtuse.mall.bean.user.Cart;
-import com.xjtuse.mall.bean.user.Collect;
-import com.xjtuse.mall.bean.user.LitemallAddress;
+import com.xjtuse.mall.bean.user.*;
 import com.xjtuse.mall.common.CouponConstant;
 import com.xjtuse.mall.mapper.wx.WxUserMapper;
 import com.xjtuse.mall.service.wx.WxUserService;
@@ -239,6 +237,30 @@ public class WxUserServiceImpl implements WxUserService {
     @Override
     public void deleteAddressById(Integer id) {
         userMapper.deleteAddressById(id);
+    }
+
+    @Override
+    public void clearCart(Integer userId) {
+        List<Cart> cartList = queryCartById(userId);
+        for (Cart c :
+                cartList) {
+            deleteCartById(c);
+        }
+    }
+
+    @Override
+    public void updateCouponUser(CouponAndUser couponUser) {
+        userMapper.updateCouponUser(couponUser);
+    }
+
+    @Override
+    public User queryUserById(Integer userId) {
+        return userMapper.queryUserById(userId);
+    }
+
+    @Override
+    public void saveComment(Comment comment) {
+        userMapper.saveComment(comment);
     }
 
     @Override

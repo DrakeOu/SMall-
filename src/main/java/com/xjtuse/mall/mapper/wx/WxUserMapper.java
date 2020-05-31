@@ -1,12 +1,10 @@
 package com.xjtuse.mall.mapper.wx;
 
+import com.xjtuse.mall.bean.goods.Comment;
 import com.xjtuse.mall.bean.goods.Goods;
 import com.xjtuse.mall.bean.promotion.Coupon;
 import com.xjtuse.mall.bean.promotion.CouponAndUser;
-import com.xjtuse.mall.bean.user.Address;
-import com.xjtuse.mall.bean.user.Cart;
-import com.xjtuse.mall.bean.user.Collect;
-import com.xjtuse.mall.bean.user.LitemallAddress;
+import com.xjtuse.mall.bean.user.*;
 import com.xjtuse.mall.utils.PageUtil;
 import org.apache.ibatis.annotations.Param;
 
@@ -75,6 +73,12 @@ public interface WxUserMapper {
     void updateAddress(LitemallAddress address);
 
     void deleteAddressById(Integer id);
+
+    void updateCouponUser(CouponAndUser couponUser);
+
+    User queryUserById(Integer userId);
+
+    void saveComment(Comment comment);
 
     /**
      * 此mapper负责控制如下 表数据

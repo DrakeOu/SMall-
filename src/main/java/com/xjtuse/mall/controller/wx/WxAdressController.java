@@ -1,7 +1,6 @@
 package com.xjtuse.mall.controller.wx;
 
 import com.xjtuse.mall.annotation.LoginUser;
-import com.xjtuse.mall.bean.user.Address;
 import com.xjtuse.mall.bean.user.LitemallAddress;
 import com.xjtuse.mall.service.wx.WxUserService;
 import com.xjtuse.mall.utils.RegexUtil;

@@ -44,4 +44,9 @@ public class WxOtherServiceImpl implements WxOtherService {
     public Integer queryTopicCount() {
         return otherMapper.queryTopicCount();
     }
+
+    @Override
+    public List<Issue> queryIssueList(String question, PageUtil pageUtil) {
+        return otherMapper.queryIssueList(question, pageUtil);
+    }
 }

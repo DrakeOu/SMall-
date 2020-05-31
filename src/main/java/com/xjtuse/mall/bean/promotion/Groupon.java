@@ -14,6 +14,24 @@ public class Groupon {
     private String shareUrl;
     private Boolean payed;
     private Boolean deleted;
+    private Short status;
+    private Date creatorUserTime;
+
+    public Short getStatus() {
+        return status;
+    }
+
+    public void setStatus(Short status) {
+        this.status = status;
+    }
+
+    public Date getCreatorUserTime() {
+        return creatorUserTime;
+    }
+
+    public void setCreatorUserTime(Date creatorUserTime) {
+        this.creatorUserTime = creatorUserTime;
+    }
 
     public Groupon() {
     }

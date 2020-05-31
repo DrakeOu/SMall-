@@ -18,4 +18,5 @@ public interface WxOtherService {
 
     Integer queryTopicCount();
 
+    List<Issue> queryIssueList(String question, PageUtil pageUtil);
 }

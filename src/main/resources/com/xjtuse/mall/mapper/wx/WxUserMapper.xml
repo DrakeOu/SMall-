@@ -25,6 +25,25 @@
         <result column="deleted" property="deleted"/>
     </resultMap>
 
+    <!--1 会员管理//////////////////////////////////////////////////////-->
+    <resultMap id="UserMap" type="com.xjtuse.mall.bean.user.User">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="last_login_ip" property="lastLoginIp"/>
+        <result column="user_level" property="userLevel"/>
+        <result column="nickname" property="nickname"/>
+        <result column="mobile" property="mobile"/>
+        <result column="avatar" property="avatar"/>
+        <result column="weixin_openid" property="weixinOpenid"/>
+        <result column="status" property="status"/>
+        <result column="add_time" property="addTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
     <!--优惠券用户表-->
     <resultMap id="CouponUserMap" type="com.xjtuse.mall.bean.promotion.CouponAndUser">
         <result column="id" property="id"/>
@@ -253,8 +272,12 @@
         select id, user_id, goods_id, goods_sn, goods_name, product_id, price, number, specifications, checked, pic_url, add_time, update_time, deleted
         from litemall_cart
         where deleted = 0
-        and id = #{cartId}
-        and user_id = #{userId}
+          <if test="cartId!=null">
+              and id = #{cartId}
+          </if>
+        <if test="userId!=null">
+            and user_id = #{userId}
+        </if>
     </select>
 
     <select id="queryAllCouponAndUser" resultMap="CouponUserMap">
@@ -346,4 +369,25 @@
         where id = #{id}
     </update>
 
+
+    <update id="updateCouponUser">
+        update litemall_coupon_user set
+        status = #{status},
+        used_time = #{usedTime},
+        order_id = #{orderId},
+        update_time = now()
+        where id = #{id}
+    </update>
+
+    <select id="queryUserById" resultMap="UserMap">
+        select id, username, password, gender, birthday, last_login_time, last_login_ip, user_level, nickname, mobile, avatar, weixin_openid, session_key, status, add_time, update_time, deleted
+        from litemall_user
+        where deleted = 0 and id = #{userId}
+    </select>
+
+    <insert id="saveComment">
+        insert into litemall_comment
+        (value_id, type, content, admin_content, user_id, has_picture, pic_urls, star, add_time, update_time) VALUES
+        (#{valueId}, #{type}, #{content}, #{adminContent}, #{userId}, #{hasPicture}, #{picUrls}, #{star}, now(), now())
+    </insert>
 </mapper>

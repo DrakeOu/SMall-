@@ -100,4 +100,19 @@
         from litemall_topic
     </select>
 
+    <select id="queryIssueList" resultMap="IssueMap">
+        select
+        from litemall_issue
+        where deleted = 0
+        <if test="question != null and question != ''">
+            and question like concat('%',concat(#{question},'%' ))
+        </if>
+        <if test="pageUtil != null and pageUtil.sort != null">
+            order by #{pageUtil.sort} #{pageUtil.order}
+        </if>
+        <if test="pageUtil != null and pageUtil.start != null">
+            limit #{pageUtil.start},#{pageUtil.limit}
+        </if>
+    </select>
+
 </mapper>

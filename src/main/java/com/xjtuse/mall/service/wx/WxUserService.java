@@ -1,12 +1,10 @@
 package com.xjtuse.mall.service.wx;
 
+import com.xjtuse.mall.bean.goods.Comment;
 import com.xjtuse.mall.bean.goods.Goods;
 import com.xjtuse.mall.bean.promotion.Coupon;
 import com.xjtuse.mall.bean.promotion.CouponAndUser;
-import com.xjtuse.mall.bean.user.Address;
-import com.xjtuse.mall.bean.user.Cart;
-import com.xjtuse.mall.bean.user.Collect;
-import com.xjtuse.mall.bean.user.LitemallAddress;
+import com.xjtuse.mall.bean.user.*;
 import com.xjtuse.mall.utils.PageUtil;
 
 import java.math.BigDecimal;
@@ -78,4 +76,12 @@ public interface WxUserService {
     void updateAddress(LitemallAddress address);
 
     void deleteAddressById(Integer id);
+
+    void clearCart(Integer userId);
+
+    void updateCouponUser(CouponAndUser couponUser);
+
+    User queryUserById(Integer userId);
+
+    void saveComment(Comment comment);
 }

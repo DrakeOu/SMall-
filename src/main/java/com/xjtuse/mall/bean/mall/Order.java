@@ -10,6 +10,7 @@ public class Order {
     private Integer userId;
     private String orderSn;
     private Integer orderStatus;
+    private Integer aftersaleStatus;
     private String consignee;
     private String mobile;
     private String address;
@@ -26,12 +27,56 @@ public class Order {
     private String shipSn;
     private String shipChannel;
     private Date shipTime;
+    private BigDecimal refundAmount;
+    private String refundType;
+    private String refundContent;
+    private Date refundTime;
     private Date confirmTime;
     private Integer comments;
     private Date endTime;
     private Date addTime;
     private Date updateTime;
     private Boolean deleted;
+
+    public Integer getAftersaleStatus() {
+        return aftersaleStatus;
+    }
+
+    public void setAftersaleStatus(Integer aftersaleStatus) {
+        this.aftersaleStatus = aftersaleStatus;
+    }
+
+    public BigDecimal getRefundAmount() {
+        return refundAmount;
+    }
+
+    public void setRefundAmount(BigDecimal refundAmount) {
+        this.refundAmount = refundAmount;
+    }
+
+    public String getRefundType() {
+        return refundType;
+    }
+
+    public void setRefundType(String refundType) {
+        this.refundType = refundType;
+    }
+
+    public String getRefundContent() {
+        return refundContent;
+    }
+
+    public void setRefundContent(String refundContent) {
+        this.refundContent = refundContent;
+    }
+
+    public Date getRefundTime() {
+        return refundTime;
+    }
+
+    public void setRefundTime(Date refundTime) {
+        this.refundTime = refundTime;
+    }
 
     @Override
     public String toString() {
@@ -98,7 +143,7 @@ public class Order {
     }
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Integer id) {

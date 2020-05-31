@@ -14,10 +14,19 @@ public class GrouponRules {
     private String picUrl;
     private BigDecimal discount;
     private Integer discountMember;
+    private Short status;
     private Date addTime;
     private Date updateTime;
     private Date expireTime;
     private Boolean deleted;
+
+    public Short getStatus() {
+        return status;
+    }
+
+    public void setStatus(Short status) {
+        this.status = status;
+    }
 
     @Override
     public String toString() {

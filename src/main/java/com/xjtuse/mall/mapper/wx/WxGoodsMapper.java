@@ -6,6 +6,7 @@ import com.xjtuse.mall.bean.goods.GoodsProduct;
 import com.xjtuse.mall.bean.goods.GoodsSpecification;
 import com.xjtuse.mall.bean.mall.Brand;
 import com.xjtuse.mall.bean.mall.Category;
+import com.xjtuse.mall.bean.mall.OrderAndGoods;
 import com.xjtuse.mall.utils.PageUtil;
 import io.lettuce.core.dynamic.annotation.Param;
 
@@ -51,6 +52,18 @@ public interface WxGoodsMapper {
     boolean isOnSale(Goods goods);
 
     GoodsProduct queryProductByPid(Integer productId);
+
+    void addOrderAndGoods(OrderAndGoods orderGoods);
+
+    int reduceStock(Integer productId, Short number);
+
+    int addStock(Integer productId, Short number);
+
+    List<OrderAndGoods> queryOrderAndGoodsByOid(@Param("orderId") Integer id);
+
+    OrderAndGoods queryOrderGoodsById(Integer orderGoodsId);
+
+    Short getComments(Integer orderId);
 
 
     /**

@@ -6,6 +6,7 @@ import com.xjtuse.mall.bean.goods.GoodsProduct;
 import com.xjtuse.mall.bean.goods.GoodsSpecification;
 import com.xjtuse.mall.bean.mall.Brand;
 import com.xjtuse.mall.bean.mall.Category;
+import com.xjtuse.mall.bean.mall.OrderAndGoods;
 import com.xjtuse.mall.mapper.wx.WxGoodsMapper;
 import com.xjtuse.mall.service.wx.WxGoodsService;
 import com.xjtuse.mall.utils.PageUtil;
@@ -121,6 +122,41 @@ public class WxGoodsServiceImpl implements WxGoodsService {
     @Override
     public GoodsProduct queryProductByPid(Integer productId) {
         return goodsMapper.queryProductByPid(productId);
+    }
+
+    @Override
+    public void addOrderAndGoods(OrderAndGoods orderGoods) {
+        goodsMapper.addOrderAndGoods(orderGoods);
+    }
+
+    @Override
+    public int reduceStock(Integer productId, Short number) {
+        return goodsMapper.reduceStock(productId, number);
+    }
+
+    @Override
+    public List<OrderAndGoods> queryOrderGoodsList(Integer orderId) {
+        return goodsMapper.queryOrderAndGoodsByOid(orderId);
+    }
+
+    @Override
+    public int addStock(Integer productId, Short number) {
+        return goodsMapper.addStock(productId, number);
+    }
+
+    @Override
+    public List<OrderAndGoods> queryOrderAndGoodsByOid(Integer id) {
+        return goodsMapper.queryOrderAndGoodsByOid(id);
+    }
+
+    @Override
+    public OrderAndGoods queryOrderGoodsByid(Integer orderGoodsId) {
+        return goodsMapper.queryOrderGoodsById(orderGoodsId);
+    }
+
+    @Override
+    public Short getComments(Integer orderId) {
+        return goodsMapper.getComments(orderId);
     }
 
 }

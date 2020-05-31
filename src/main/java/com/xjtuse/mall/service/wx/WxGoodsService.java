@@ -6,6 +6,7 @@ import com.xjtuse.mall.bean.goods.GoodsProduct;
 import com.xjtuse.mall.bean.goods.GoodsSpecification;
 import com.xjtuse.mall.bean.mall.Brand;
 import com.xjtuse.mall.bean.mall.Category;
+import com.xjtuse.mall.bean.mall.OrderAndGoods;
 import com.xjtuse.mall.utils.PageUtil;
 
 import java.util.List;
@@ -50,4 +51,18 @@ public interface WxGoodsService {
     boolean isOnSale(Goods goods);
 
     GoodsProduct queryProductByPid(Integer productId);
+
+    void addOrderAndGoods(OrderAndGoods orderGoods);
+
+    int reduceStock(Integer productId, Short number);
+
+    List<OrderAndGoods> queryOrderGoodsList(Integer orderId);
+
+    int addStock(Integer productId, Short number);
+
+    List<OrderAndGoods> queryOrderAndGoodsByOid(Integer id);
+
+    OrderAndGoods queryOrderGoodsByid(Integer orderGoodsId);
+
+    Short getComments(Integer orderId);
 }
